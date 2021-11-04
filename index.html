@@ -14,27 +14,68 @@
 
     <div class="budgy-container">
 
-        <div class="outcome-area"> 
+        <div class="dashboard"> 
 
-            <div id="outcome-box"></div>
-            <div>weekly</div>
-            <div>monthly</div>
+            <div id="balance">Balance:</div>
+           
+            <div class="weekly">Weekly amount: 
+                <output id="weekly-amount">200</output>
+
+                <label for="weekly-limit">Weekly limit</label>
+                <input type="number" id="weekly-limit" name="weekly-limit" >
+
+            </div>
+            <div class="">Monthly:
+                <output id="weekly-amount">500</output>
+
+                <label for="weekly-limit">Weekly limit</label>
+                <input type="number" id="weekly-limit" name="weekly-limit" >
+
+
+            </div>
 
         </div>
 
-        <div class="form-area">
+        <div class="entry-form">
 
-            <form class="form-input">
-                <input type="text">
-                <input type="">
-                <input type="time">
-                <input type="number">
-                <input type="submit">
+            <form class="form-input" action="#" method="POST">
+                <label for="description"></label>
+                <input type="text" id="description" name="description">
+
+                <label for="categories-select"></label>
+                <select name="categories" id="categories" required>
+                    <option value="groceries">Groceries</option>
+                    <option value="food&drinks">Food & Drinks</option>
+                    <option value="Beauty&health">Beauty & Health</option>
+                    <option value="leisure">Leisure</option>
+                    <option value="gifts">Gifts</option>
+                </select>
+
+                <label for="date"></label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="amount"></label>
+                <input type="number" id="amount" name="amount" required>
+
+                <label for="entry"></label>
+                <input type="submit" value="+"> 
             </form>
 
         </div>
 
-        <div class="input-area">
+        <div class="entry-area">
+
+            <div id="entry-filters"></div>
+            <div id="entry-table">
+               <table>
+                   <tr class="entry-row">
+                       <th class="entry-header">Description</th>
+                       <th  class="entry-header">Category</th>
+                       <th class="entry-header">Date</th>
+                       <th class="entry-header">Amount</th>
+                   </tr>
+               </table>
+            </div>
 
         </div>
 
