@@ -16,7 +16,9 @@
 
         <div class="dashboard"> 
 
-            <div id="balance">Balance:</div>
+            <div id="balance">Balance:
+                <div>0</div>
+            </div>
            
             <div class="weekly">Weekly amount: 
                 <output id="weekly-amount">200</output>
@@ -68,12 +70,15 @@
             <div id="entry-filters"></div>
             <div id="entry-table">
                <table>
-                   <tr class="entry-row">
-                       <th class="entry-header">Description</th>
-                       <th  class="entry-header">Category</th>
-                       <th class="entry-header">Date</th>
-                       <th class="entry-header">Amount</th>
-                   </tr>
+                   <thead>
+                        <tr class="entry-header-row">
+                            <th class="entry-header">Description</th>
+                            <th  class="entry-header">Category</th>
+                            <th class="entry-header">Date</th>
+                            <th class="entry-header">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
                </table>
             </div>
 

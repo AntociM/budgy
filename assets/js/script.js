@@ -20,6 +20,7 @@ function handleSubmit(event) {
 
     // Create a new table row
     let table_row = document.createElement("tr");
+    table_row.className = "entry-row";
     table_row.innerHTML = `
         <td>${desc}</td>
         <td>${cat}</td>
@@ -28,10 +29,39 @@ function handleSubmit(event) {
     `
 
     // Append the new row to the HTML table element
-    table.children[0].appendChild(table_row);
+    table.children[0].children[1] .appendChild(table_row);
 
-    event.target.reset();
+    // event.target.reset();
+    updateBalance();
 }
 
 let form = document.getElementById('form-input');
 form.addEventListener('submit', handleSubmit);
+
+/**
+ * Iterates through the rows and calcultates the current balance.
+ */
+
+function updateBalance () {
+
+    let rows = document.getElementsByClassName("entry-row");
+
+    let balance = 0;
+    
+    for(let row of rows) {
+       
+        balance += parseFloat(row.children[3].textContent);
+    }
+    console.log(balance);
+
+    let currentBalance = document.getElementById("balance").children[0];
+    currentBalance.textContent = balance.toString();
+}
+
+/**
+ * Updates balance, weekly and monthly amounts
+ */
+function updateDashboard() {
+    updateBalance();
+}
+
