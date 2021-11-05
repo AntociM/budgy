@@ -15,6 +15,9 @@ body {
     font-size: larger;
 }
 
+.error {
+    color:red;
+}
 
 .budgy-container {
     width: 75%;
