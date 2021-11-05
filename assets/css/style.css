@@ -1,3 +1,9 @@
 body {
-    background-color: aquamarine;
+    font-size: medium;
+}
+
+
+.income {
+    color: green;
+    font-size: larger;
 }
