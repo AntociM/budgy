@@ -68,12 +68,39 @@ function updateWeeklySpendingLimit() {
     }
 }
 
+/**
+ * 
+ * @param {*} event 
+ */
+function handleMonthlyLimit(event) {
+    event.preventDefault();
+    updateMonthlySpendingLimit();
+}
+
+/**
+ * 
+ */
+ function updateMonthlySpendingLimit() {
+    let monthlyLimit = document.getElementById("monthly-limit").value;
+    let monthlyAmountElement =  document.getElementById("monthly-expenses");
+    if (parseFloat(monthlyAmountElement.textContent) > monthlyLimit) {
+        monthlyAmountElement.className = "error";
+    }
+    else{
+        monthlyAmountElement.classList.remove("error");
+    }
+ }
+
 // Add event listners for HTML elements
 let form = document.getElementById('form-input');
 form.addEventListener('submit', handleSubmit);
 
 let weeklyLimit = document.getElementById("weekly-limit");
 weeklyLimit.addEventListener("change", handleWeeklyLimit);
+
+let monthlyLimit = document.getElementById("monthly-limit");
+monthlyLimit.addEventListener("change", handleMonthlyLimit);
+
 
 /**
  * Iterates through the rows and calculates the current balance.
@@ -126,6 +153,7 @@ function updateDashboard() {
     updateMonthlyBalance();
     currentWeeklyBalance();
     updateWeeklySpendingLimit();
+    updateMonthlySpendingLimit();
 }
 
 /**
