@@ -1,9 +1,67 @@
 body {
     font-size: medium;
+    background-color: #f2cc8f;
 }
 
+
+.heading {
+    display: flex;
+    justify-content: center;
+    color: #3d405b;
+}
 
 .income {
     color: red;
     font-size: larger;
+}
+
+
+.budgy-container {
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.dashboard {
+    background-color: #81B29A;
+    border-radius: 10px;
+    height: 150px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+
+    color: white;
+}
+
+.entry-form {
+    background-color: #E07A5F;
+    border-radius: 10px;
+    height: 50px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.entry-area {
+    background-color: #F4F1DE;
+    border-radius: 10px;
+    height: 500px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin: 10px;
+
+}
+
+tr {
+    width: 100%;
+
 }

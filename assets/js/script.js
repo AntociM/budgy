@@ -43,12 +43,29 @@ function handleSubmit(event) {
     // event.target.reset();
     updateDashboard();
 }
+/**
+ * This function will compare the weekly-limit value set by the user with the curent weekly balance.
+ * If expenses are greater then the limit set, the amount will be styled with red color.
+ */
+function handleWeeklyLimit(event) {
+    
+    let  weeklyLimit =  event.target.value;
+    let  weeklyAmount =  parseFloat(document.getElementById("weekly-expenses").textContent);
 
+    console.log(weeklyLimit);
+    console.log(weeklyAmount);
+}
+
+// Add event listners for HTML elements
 let form = document.getElementById('form-input');
 form.addEventListener('submit', handleSubmit);
 
+let weeklyLimit = document.getElementById("weekly-limit");
+weeklyLimit.addEventListener("change", handleWeeklyLimit);
+
 /**
- * Iterates through the rows and calcultates the current balance.
+ * Iterates through the rows and calculates the current balance.
+ * Makes a separation between incomes and outcomes.
  */
 
 function updateBalance() {
@@ -56,8 +73,7 @@ function updateBalance() {
     let rows = document.getElementsByClassName("entry-row");
 
     let balance = 0;
-    console.log("entry update balance");
-
+    
     for (let row of rows) {
         if (row.children[1].textContent === "income") {
 
@@ -68,11 +84,10 @@ function updateBalance() {
 
             balance -= parseFloat(row.children[3].textContent);
         }
-        console.log(balance);
-        console.log(row.children[1]);
+        
     }
 
-    let currentBalance = document.getElementById("balance").children[0];
+    let currentBalance = document.getElementById("balance");
     currentBalance.textContent = balance.toString();
 }
 
@@ -118,7 +133,7 @@ function updateDashboard() {
 }
 /**
  * This function iterates through entry-rows and extracts the inputs made in 
- * the same week of the year.  
+ * the same week of same year.  
  */
 
 function currentWeeklyBalance() {
@@ -151,3 +166,7 @@ function currentWeeklyBalance() {
     currentWeeklyBalance.textContent = weeklyAmount.toString();
 
 }
+
+
+
+
