@@ -20,7 +20,7 @@ function handleSubmit(event) {
     // Create a new table row
     let table_row = document.createElement("tr");
     table_row.className = "entry-row";
- 
+
     if (cat === "income") {
         table_row.innerHTML = `
         <td>${desc}</td>
@@ -56,10 +56,20 @@ function updateBalance() {
     let rows = document.getElementsByClassName("entry-row");
 
     let balance = 0;
+    console.log("entry update balance");
 
     for (let row of rows) {
+        if (row.children[1].textContent === "income") {
 
-        balance += parseFloat(row.children[3].textContent);
+
+            balance += parseFloat(row.children[3].textContent);
+
+        } else {
+
+            balance -= parseFloat(row.children[3].textContent);
+        }
+        console.log(balance);
+        console.log(row.children[1]);
     }
 
     let currentBalance = document.getElementById("balance").children[0];
@@ -67,7 +77,7 @@ function updateBalance() {
 }
 
 /**
- * Updates the monthly balance with entrys that match the month and year.
+ * Updates the monthly balance with inputs that match the month and year.
  */
 
 function updateMonthlyBalance() {
@@ -84,7 +94,7 @@ function updateMonthlyBalance() {
 
         let rowDate = new Date(row.children[2].textContent);
 
-        if (month === rowDate.getUTCMonth() && year === rowDate.getUTCFullYear()) {
+        if (month === rowDate.getUTCMonth() && year === rowDate.getUTCFullYear() && row.children[1].textContent !== "income") {
 
             monthlyAmount += parseFloat(row.children[3].textContent);
 
@@ -92,7 +102,7 @@ function updateMonthlyBalance() {
 
     }
 
-    let currentMonthlyBalance = document.getElementById("monthly-amount");
+    let currentMonthlyBalance = document.getElementById("monthly-expenses");
     currentMonthlyBalance.textContent = monthlyAmount.toString();
 
 }
@@ -106,6 +116,10 @@ function updateDashboard() {
     updateMonthlyBalance();
     currentWeeklyBalance();
 }
+/**
+ * This function iterates through entry-rows and extracts the inputs made in 
+ * the same week of the year.  
+ */
 
 function currentWeeklyBalance() {
 
@@ -124,16 +138,16 @@ function currentWeeklyBalance() {
         let rowFirstJan = new Date(rowDate.getFullYear(), 0, 1);
         let rowNumberOfDays = Math.floor((rowDate - rowFirstJan) / (24 * 60 * 60 * 1000));
         let rowWeekNr = Math.ceil((rowDate.getDay() + 1 + rowNumberOfDays) / 7);
-       
 
 
 
-        if (weekNr === rowWeekNr && today.getFullYear() === rowDate.getFullYear() ) {
+
+        if (weekNr === rowWeekNr && today.getFullYear() === rowDate.getFullYear() && row.children[1].textContent !== "income") {
             weeklyAmount += parseFloat(row.children[3].textContent);
         }
 
     }
-    let currentWeeklyBalance = document.getElementById("weekly-amount");
+    let currentWeeklyBalance = document.getElementById("weekly-expenses");
     currentWeeklyBalance.textContent = weeklyAmount.toString();
 
 }
