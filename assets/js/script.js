@@ -8,17 +8,17 @@ function handleSubmit(event) {
     event.preventDefault();
 
     // Get the elements value
-    let desc = event.target.children[1].value;
-    let cat = event.target.children[3].value;
-    let day = event.target.children[5].value;
-    let oneAmount = event.target.children[7].value;
+    var desc = event.target.children[1].value;
+    var cat = event.target.children[3].value;
+    var day = event.target.children[5].value;
+    var oneAmount = event.target.children[7].value;
 
 
     // Get the table division
-    let table = document.getElementById("entry-table");
+    var table = document.getElementById("entry-table");
 
     // Create a new table row
-    let table_row = document.createElement("tr");
+    var table_row = document.createElement("tr");
     table_row.className = "entry-row";
 
     if (cat === "income") {
@@ -27,14 +27,14 @@ function handleSubmit(event) {
         <td>${cat}</td>
         <td>${day}</td>
         <td class="income">${oneAmount}</td>
-    `
+    `;
     } else {
         table_row.innerHTML = `
         <td>${desc}</td>
         <td>${cat}</td>
         <td>${day}</td>
         <td>${oneAmount}</td>
-    `
+    `;
     }
 
     // Append the new row to the HTML table element
@@ -61,8 +61,8 @@ function handleWeeklyLimit(event) {
  * If expenses are greater then the limit set, the amount will be styled with red color
  */
 function updateWeeklySpendingLimit() {
-    let weeklyLimit = document.getElementById("weekly-limit").value;
-    let weeklyAmountElement = document.getElementById("weekly-expenses");
+    var weeklyLimit = document.getElementById("weekly-limit").value;
+    var weeklyAmountElement = document.getElementById("weekly-expenses");
     if (parseFloat(weeklyAmountElement.textContent) > weeklyLimit) {
         weeklyAmountElement.className = "error";
     }
@@ -84,8 +84,8 @@ function handleMonthlyLimit(event) {
  * 
  */
  function updateMonthlySpendingLimit() {
-    let monthlyLimit = document.getElementById("monthly-limit").value;
-    let monthlyAmountElement =  document.getElementById("monthly-expenses");
+    var monthlyLimit = document.getElementById("monthly-limit").value;
+    var monthlyAmountElement =  document.getElementById("monthly-expenses");
     if (parseFloat(monthlyAmountElement.textContent) > monthlyLimit) {
         monthlyAmountElement.className = "error";
     }
@@ -101,7 +101,7 @@ function handleMonthlyLimit(event) {
   */
  function handleResetButton(event) {
      event.preventDefault();
-     let clearTbody = document.getElementsByTagName("tbody")[0];
+     var clearTbody = document.getElementsByTagName("tbody")[0];
      clearTbody.innerHTML = "";
      updateDashboard();
      document.getElementById("monthly-limit").value = "";
@@ -110,16 +110,16 @@ function handleMonthlyLimit(event) {
  }
 
 // Add event listners for HTML elements
-let form = document.getElementById('form-input');
+var form = document.getElementById('form-input');
 form.addEventListener('submit', handleSubmit);
 
-let weeklyLimit = document.getElementById("weekly-limit");
+var weeklyLimit = document.getElementById("weekly-limit");
 weeklyLimit.addEventListener("change", handleWeeklyLimit);
 
-let monthlyLimit = document.getElementById("monthly-limit");
+var monthlyLimit = document.getElementById("monthly-limit");
 monthlyLimit.addEventListener("change", handleMonthlyLimit);
 
-let resetButton = document.getElementById("reset");
+var resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", handleResetButton);
 
 
@@ -130,9 +130,9 @@ resetButton.addEventListener("click", handleResetButton);
 
 function updateBalance() {
 
-    let rows = document.getElementsByClassName("entry-row");
-    let balance = 0;
-    for (let row of rows) {
+    var rows = document.getElementsByClassName("entry-row");
+    var balance = 0;
+    for (var row of rows) {
         if (row.children[1].textContent === "income") {
             balance += parseFloat(row.children[3].textContent);
         } else {
@@ -140,7 +140,7 @@ function updateBalance() {
         }
     }
 
-    let currentBalance = document.getElementById("balance");
+    var currentBalance = document.getElementById("balance");
     currentBalance.textContent = balance.toString();
 }
 
@@ -148,21 +148,21 @@ function updateBalance() {
  * Updates the monthly balance with inputs that match the month and year.
  */
 function updateMonthlyBalance() {
-    let rows = document.getElementsByClassName("entry-row");
-    let monthlyAmount = 0;
-    let today = new Date();
-    let month = today.getUTCMonth();
-    let year = today.getUTCFullYear();
+    var rows = document.getElementsByClassName("entry-row");
+    var monthlyAmount = 0;
+    var today = new Date();
+    var month = today.getUTCMonth();
+    var year = today.getUTCFullYear();
 
-    for (let row of rows) {
-        let rowDate = new Date(row.children[2].textContent);
+    for (var row of rows) {
+        var rowDate = new Date(row.children[2].textContent);
 
         if (month === rowDate.getUTCMonth() && year === rowDate.getUTCFullYear() && row.children[1].textContent !== "income") {
             monthlyAmount += parseFloat(row.children[3].textContent);
         }
     }
 
-    let currentMonthlyBalance = document.getElementById("monthly-expenses");
+    var currentMonthlyBalance = document.getElementById("monthly-expenses");
     currentMonthlyBalance.textContent = monthlyAmount.toString();
 }
 
@@ -182,23 +182,23 @@ function updateDashboard() {
  * the same week of same year.  
  */
 function currentWeeklyBalance() {
-    let rows = document.getElementsByClassName("entry-row");
-    let weeklyAmount = 0;
-    let today = new Date();
-    let firstJan = new Date(today.getFullYear(), 0, 1);
-    let numberOfDays = Math.floor((today - firstJan) / (24 * 60 * 60 * 1000));
-    let weekNr = Math.ceil((today.getDay() + 1 + numberOfDays) / 7);
+    var rows = document.getElementsByClassName("entry-row");
+    var weeklyAmount = 0;
+    var today = new Date();
+    var firstJan = new Date(today.getFullYear(), 0, 1);
+    var numberOfDays = Math.floor((today - firstJan) / (24 * 60 * 60 * 1000));
+    var weekNr = Math.ceil((today.getDay() + 1 + numberOfDays) / 7);
 
-    for (let row of rows) {
-        let rowDate = new Date(row.children[2].textContent);
-        let rowFirstJan = new Date(rowDate.getFullYear(), 0, 1);
-        let rowNumberOfDays = Math.floor((rowDate - rowFirstJan) / (24 * 60 * 60 * 1000));
-        let rowWeekNr = Math.ceil((rowDate.getDay() + 1 + rowNumberOfDays) / 7);
+    for (var row of rows) {
+        var rowDate = new Date(row.children[2].textContent);
+        var rowFirstJan = new Date(rowDate.getFullYear(), 0, 1);
+        var rowNumberOfDays = Math.floor((rowDate - rowFirstJan) / (24 * 60 * 60 * 1000));
+        var rowWeekNr = Math.ceil((rowDate.getDay() + 1 + rowNumberOfDays) / 7);
         if (weekNr === rowWeekNr && today.getFullYear() === rowDate.getFullYear() && row.children[1].textContent !== "income") {
             weeklyAmount += parseFloat(row.children[3].textContent);
         }
     }
 
-    let currentWeeklyBalance = document.getElementById("weekly-expenses");
+    var currentWeeklyBalance = document.getElementById("weekly-expenses");
     currentWeeklyBalance.textContent = weeklyAmount.toString();
 }
