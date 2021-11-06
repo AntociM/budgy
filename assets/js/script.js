@@ -53,6 +53,9 @@ function handleWeeklyLimit(event) {
     updateWeeklySpendingLimit();
 }
 
+
+
+
 /**
  * This function will compare the weekly-limit value set by the user with the curent weekly balance
  * If expenses are greater then the limit set, the amount will be styled with red color
@@ -91,6 +94,21 @@ function handleMonthlyLimit(event) {
     }
  }
 
+ /**
+  * This function will clear the data inputts fields, update the Dashboard area
+  * and clear the weekly and monthly limits
+  * @param {*} event 
+  */
+ function handleResetButton(event) {
+     event.preventDefault();
+     let clearTbody = document.getElementsByTagName("tbody")[0];
+     clearTbody.innerHTML = "";
+     updateDashboard();
+     document.getElementById("monthly-limit").value = "";
+     document.getElementById("weekly-limit").value = "";
+    
+ }
+
 // Add event listners for HTML elements
 let form = document.getElementById('form-input');
 form.addEventListener('submit', handleSubmit);
@@ -100,6 +118,9 @@ weeklyLimit.addEventListener("change", handleWeeklyLimit);
 
 let monthlyLimit = document.getElementById("monthly-limit");
 monthlyLimit.addEventListener("change", handleMonthlyLimit);
+
+let resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", handleResetButton);
 
 
 /**
