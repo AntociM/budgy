@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Budget tracker">
     <meta name="keywords" content="budget, planner, tracker, financial">
-    <meta name="theme-color" content="#FFD166">
+    <meta name="theme-color" content="#465775">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Budgy</title>
 </head>
-<body>
+
+<body onload="updateDashboard()">
     <h1 class="heading">BUDGY <br> Your Finance Buddy </h1>
-     <div class="budgy-container">
+    <div class="budgy-container">
 
         <div class="dashboard">
 
@@ -81,16 +82,79 @@
                             <th class="entry-header">Amount</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <!-- <tbody></tbody> -->
+                    <tbody>
+                        <tr class="entry-row">
+                            <td>Preparation for party</td>
+                            <td>food&amp;drinks</td>
+                            <td>2021-11-06</td>
+                            <td>1560</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Spa after party</td>
+                            <td>Beauty&amp;health</td>
+                            <td>2021-11-08</td>
+                            <td>6000</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Project2 End Party</td>
+                            <td>leisure</td>
+                            <td>2021-11-07</td>
+                            <td>8000</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>H&amp;M retur</td>
+                            <td>income</td>
+                            <td>2021-11-03</td>
+                            <td class="income">120</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Mama's birthday</td>
+                            <td>gifts</td>
+                            <td>2021-11-04</td>
+                            <td>454</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Trip to Spain</td>
+                            <td>leisure</td>
+                            <td>2021-11-04</td>
+                            <td>12500</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Lunch</td>
+                            <td>food&amp;drinks</td>
+                            <td>2021-11-03</td>
+                            <td>200</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Starbucks</td>
+                            <td>food&amp;drinks</td>
+                            <td>2021-11-03</td>
+                            <td>100</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Zara</td>
+                            <td>Beauty&amp;health</td>
+                            <td>2021-11-03</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr class="entry-row">
+                            <td>Salary</td>
+                            <td>income</td>
+                            <td>2021-11-01</td>
+                            <td class="income">30000</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-        
+
         <input class="reset" id="reset" type="button" name="reset" value="Reset">
 
 
     </div>
 
+    <!-- JavaScript file -->
     <script src="assets/js/script.js"></script>
 </body>
 

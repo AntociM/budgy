@@ -38,7 +38,7 @@ function handleSubmit(event) {
     }
 
     // Append the new row to the HTML table element
-    table.children[0].children[1].appendChild(table_row);
+    table.children[0].children[1].insertBefore(table_row,table.children[0].children[1].firstChild);
 
     event.target.reset();
     updateDashboard();
