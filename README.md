@@ -22,3 +22,11 @@ Budgy is an interactive front-end website for tracking the user's financial data
 
 
 # User Experience
+## Wireframe
+The Wireframe for Budgy was produces using Wire Flow. The wireframe's display is for mobile divice and the final design has some changes that occured during the development process.
+
+![50%](assets/images/wireframe.jpg)
+## Color palette
+The chosen colour scheme is one based on yellow and dark tones of gray. This palette points the content out and creates a modern aspect for the website. Moreover gray is traditionally associated with business industry, corporate uniformity and professionalism.
+
+
