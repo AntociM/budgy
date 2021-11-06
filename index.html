@@ -20,14 +20,14 @@
             <div class="monthly">
                 <h3>Monthly</h3>
                 <output id="monthly-expenses">0</output>
-                <label for="monthly-limit">Limit:</label>
+                <label for="monthly-limit"></label>
                 <input type="number" id="monthly-limit" name="monthly-limit" placeholder="Set limit">
             </div>
 
             <div class="weekly">
                 <h3>Weekly</h3>
                 <output id="weekly-expenses">0</output>
-                <label for="weekly-limit">Weekly limit:</label>
+                <label for="weekly-limit"></label>
                 <input type="number" id="weekly-limit" name="weekly-limit" placeholder="Set limit">
             </div>
 
@@ -40,7 +40,7 @@
                 <label for="description"></label>
                 <input type="text" id="description" name="description" placeholder="Description" required>
 
-                <label for="categories-select"></label>
+                <label for="categories"></label>
                 <select name="categories" id="categories" required>
                     <option value="" disabled selected hidden>Category</option>
                     <option class="categories-option" value="groceries">Groceries</option>
@@ -52,13 +52,13 @@
                 </select>
 
                 <label for="date"></label>
-                <input type="date" id="date" name="date"  placeholder="YYYY-MM-DD" required>
+                <input type="date" id="date" name="date" required>
 
                 <label for="amount"></label>
                 <input type="number" id="amount" name="amount" placeholder="Amount" required>
 
-                <label for="entry"></label>
-                <input type="submit" value="+">
+                <label for="submit"></label>
+                <input type="submit" id="submit" name="submit" value="+">
             </form>
 
         </div>
