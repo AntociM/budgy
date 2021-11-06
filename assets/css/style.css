@@ -2,7 +2,7 @@
 
 /* General rules */
 body {
-    font-size: 1.5em;
+    font-size: medium;
     background-color: white;
     font-family: 'Roboto', sans-serif;
 }
@@ -198,6 +198,7 @@ table,
 thead,
 tbody {
     width: 100%;
+    font-size: 1.1em;
 }
 
 thead {
@@ -207,7 +208,7 @@ thead {
 .entry-header-row {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: medium;
+    /* font-size: medium; */
 }
 
 /* Reset button */
