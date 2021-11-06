@@ -273,7 +273,7 @@ thead {
 /* mobile media queries */
 @media screen and (max-width: 500px) {
     td {
-        font-size: 1.4em;
+        font-size: 1em;
     }
     
     body {
