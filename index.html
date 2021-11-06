@@ -8,31 +8,28 @@
     <title>Budgy</title>
 </head>
 <body>
-    <h1 class="heading">Budgy - your friendly finance tracker!
-        <!-- <img id="logo"> -->
-    </h1>
+    <h1 class="heading">BUDGY - your finance buddy </h1>
+     <div class="budgy-container">
 
-    <div class="budgy-container">
-
-        <div class="dashboard"> 
+        <div class="dashboard">
 
             <div class="balance">Balance:
                 <output id="balance">0</output>
             </div>
-           
-            <div class="weekly">Weekly expenses: 
+
+            <div class="monthly">
+                <h3>Monthly</h3>
+                <output id="monthly-expenses">0</output>
+                <label for="monthly-limit">Limit:</label>
+                <input type="number" id="monthly-limit" name="monthly-limit" placeholder="Set limit">
+            </div>
+
+            <div class="weekly">
+                <h3>Weekly</h3>
                 <output id="weekly-expenses">0</output>
                 <label for="weekly-limit">Weekly limit:</label>
-                <input type="number" id="weekly-limit" name="weekly-limit" >
+                <input type="number" id="weekly-limit" name="weekly-limit" placeholder="Set limit">
             </div>
-
-            <div class="monthly">Monthly expenses:
-                <output id="monthly-expenses">0</output>
-                <label for="monthly-limit">Monthly limit:</label>
-                <input type="number" id="monthly-limit" name="monthly-limit" >
-            </div>
-
-            <input id="reset" type="button" name="reset" value="Reset">
 
 
         </div>
@@ -41,26 +38,27 @@
 
             <form id="form-input" class="form-input">
                 <label for="description"></label>
-                <input type="text" id="description" name="description">
+                <input type="text" id="description" name="description" placeholder="Description" required>
 
                 <label for="categories-select"></label>
                 <select name="categories" id="categories" required>
-                    <option value="groceries">Groceries</option>
-                    <option value="food&drinks">Food & Drinks</option>
-                    <option value="Beauty&health">Beauty & Health</option>
-                    <option value="leisure">Leisure</option>
-                    <option value="gifts">Gifts</option>
-                    <option value="income">Income</option>
+                    <option value="" disabled selected hidden>Category</option>
+                    <option class="categories-option" value="groceries">Groceries</option>
+                    <option class="categories-option" value="food&drinks">Food & Drinks</option>
+                    <option class="categories-option" value="Beauty&health">Beauty & Health</option>
+                    <option class="categories-option" value="leisure">Leisure</option>
+                    <option class="categories-option" value="gifts">Gifts</option>
+                    <option class="categories-option" value="income">Income</option>
                 </select>
 
                 <label for="date"></label>
-                <input type="date" id="date" name="date" required>
+                <input type="date" id="date" name="date"  placeholder="YYYY-MM-DD" required>
 
                 <label for="amount"></label>
-                <input type="number" id="amount" name="amount" required>
+                <input type="number" id="amount" name="amount" placeholder="Amount" required>
 
                 <label for="entry"></label>
-                <input type="submit" value="+"> 
+                <input type="submit" value="+">
             </form>
 
         </div>
@@ -69,23 +67,26 @@
 
             <div id="entry-filters"></div>
             <div id="entry-table">
-               <table>
-                   <thead>
+                <table>
+                    <thead>
                         <tr class="entry-header-row">
                             <th class="entry-header">Description</th>
-                            <th  class="entry-header">Category</th>
+                            <th class="entry-header">Category</th>
                             <th class="entry-header">Date</th>
                             <th class="entry-header">Amount</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
-               </table>
+                </table>
             </div>
-
         </div>
+        
+        <input class="reset" id="reset" type="button" name="reset" value="Reset">
+
 
     </div>
-    
+
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

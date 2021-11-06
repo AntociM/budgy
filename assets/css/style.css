@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+/* General rules */
 body {
     font-size: medium;
-    background-color: #f2cc8f;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
 }
-
 
 .heading {
     display: flex;
@@ -10,63 +13,196 @@ body {
     color: #3d405b;
 }
 
+h3 {
+    margin: 0;
+}
+
 .income {
-    color: red;
-    font-size: larger;
+    color: green;
+    font-weight: bold;
 }
 
 .error {
-    color:red;
+    color: red;
 }
 
 .budgy-container {
+    flex-direction: column;
     width: 75%;
     height: 100%;
     margin: 0 auto;
 }
 
-.dashboard {
-    background-color: #81B29A;
-    border-radius: 10px;
-    height: 150px;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
 
-
-    color: white;
+::-webkit-input-placeholder {
+    color: #E6EBE0;
 }
 
+:-moz-placeholder {
+    color: #E6EBE0;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: #E6EBE0;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #E6EBE0;
+}
+
+::-ms-input-placeholder {
+    color: #E6EBE0;
+}
+
+::placeholder {
+    color: #E6EBE0;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+    grid-gap: 35px;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    background-color: #073B4C;
+    margin: 10px;
+    padding: 20px;
+    color: #E6EBE0;
+}
+
+.dashboard input:focus {
+    outline: none;
+}
+
+.dashboard input[type=number] {
+    background-color: transparent;
+    border: 0px solid;
+    color: #E6EBE0;
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+}
+
+.balance {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    font-size: 200%;
+}
+
+.monthly {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #118AB2;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px #118AB2;
+}
+
+#monthly-expenses {
+    font-size: 200%;
+}
+
+.weekly {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #118AB2;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px #118AB2;
+}
+
+#weekly-expenses {
+    font-size: 200%;
+}
+
+/* Entry Form */
 .entry-form {
-    background-color: #E07A5F;
+    width: auto;
+    background-color: #7CA982;
     border-radius: 10px;
     height: 50px;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+    padding: 20px;
+     margin: 10px;
+    display: grid;
+    align-content: space-evenly;
+    justify-content: space-around;
 }
 
+.categories-option {
+    color: black;
+}
+
+.entry-form input:focus {
+    outline: none;
+}
+
+.entry-form input[type=number],
+input[type=date],
+input[type=text],
+select {
+    background-color: transparent;
+    border: 0px solid;
+    color: #E6EBE0;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Entry Area*/
 .entry-area {
-    background-color: #F4F1DE;
+    width: auto     ;
+    background-color: #FFD166;
     border-radius: 10px;
     height: 500px;
+    padding: 20px;
+    margin: 10px;
     align-content: center;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    margin: 10px;
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
 
+    overflow-y: auto;
 }
 
-tr {
+tr,
+table,
+thead,
+tbody {
     width: 100%;
+}
 
+thead {
+    text-align: left;
+}
+
+.entry-header-row {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+}
+
+/* Reset button */
+#reset {
+    background-color: #cc3f0c;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+    font-size: medium;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* font-size: 16px; */
 }

@@ -40,7 +40,7 @@ function handleSubmit(event) {
     // Append the new row to the HTML table element
     table.children[0].children[1].appendChild(table_row);
 
-    // event.target.reset();
+    event.target.reset();
     updateDashboard();
 }
 
@@ -53,9 +53,6 @@ function handleWeeklyLimit(event) {
     updateWeeklySpendingLimit();
 }
 
-
-
-
 /**
  * This function will compare the weekly-limit value set by the user with the curent weekly balance
  * If expenses are greater then the limit set, the amount will be styled with red color
@@ -63,7 +60,7 @@ function handleWeeklyLimit(event) {
 function updateWeeklySpendingLimit() {
     var weeklyLimit = document.getElementById("weekly-limit").value;
     var weeklyAmountElement = document.getElementById("weekly-expenses");
-    if (parseFloat(weeklyAmountElement.textContent) > weeklyLimit) {
+    if (parseFloat(weeklyAmountElement.textContent) > weeklyLimit && weeklyLimit != "") {
         weeklyAmountElement.className = "error";
     }
     else{
@@ -86,10 +83,10 @@ function handleMonthlyLimit(event) {
  function updateMonthlySpendingLimit() {
     var monthlyLimit = document.getElementById("monthly-limit").value;
     var monthlyAmountElement =  document.getElementById("monthly-expenses");
-    if (parseFloat(monthlyAmountElement.textContent) > monthlyLimit) {
+    if (parseFloat(monthlyAmountElement.textContent) > monthlyLimit && monthlyLimit != "") {
         monthlyAmountElement.className = "error";
     }
-    else{
+    else {
         monthlyAmountElement.classList.remove("error");
     }
  }
@@ -103,10 +100,11 @@ function handleMonthlyLimit(event) {
      event.preventDefault();
      var clearTbody = document.getElementsByTagName("tbody")[0];
      clearTbody.innerHTML = "";
-     updateDashboard();
      document.getElementById("monthly-limit").value = "";
      document.getElementById("weekly-limit").value = "";
-    
+     document.getElementById('form-input').reset();
+     updateDashboard();
+
  }
 
 // Add event listners for HTML elements
