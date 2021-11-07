@@ -241,7 +241,7 @@ thead {
 
     .dashboard {
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 5x;
+        grid-gap: 5px;
         padding: 10px;
         margin: 0;
     }

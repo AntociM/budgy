@@ -72,6 +72,20 @@ The website also has a reset button. When this button is pressed, it will clear 
 
 ![](assets/images/reset.jpg)
 
+# Technologies used
+
+- HTML5 - provides the core structure for the website.
+- CSS - styling.
+- JavaScript - used to program the behavior of web page.
+- Gitpod - used to deploy the website.
+- Github - used to host and edit the website.
+
+# Testing
+
+The HTML and CSS code were tested using [W3C HTML Validator](#https://validator.w3.org/), respectively [W3C CSS Validator](#https://jigsaw.w3.org/css-validator/). JavaScript code was tested using [JSHint](#https://jshint.com/).
+A few bugs have been found during the development process which were corrected.
+
+
 
 
 
