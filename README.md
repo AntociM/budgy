@@ -1,6 +1,7 @@
 # Budgy
 
 Budgy is an interactive front-end website for tracking the user's financial data. By default it loads some test data in order to demonstrate the website capabilities. This front end is intended to be connected to a data base, which stores the information for multiple users.
+![](assets/images/responsive.jpg)
 
 # Table of content 
 - [Design Decisions](#design-decisions)
@@ -85,6 +86,35 @@ The website also has a reset button. When this button is pressed, it will clear 
 The HTML and CSS code were tested using [W3C HTML Validator](#https://validator.w3.org/), respectively [W3C CSS Validator](#https://jigsaw.w3.org/css-validator/). JavaScript code was tested using [JSHint](#https://jshint.com/).
 A few bugs have been found during the development process which were corrected.
 
+## HTML result
+![](assets/images/html-verification.jpg)
+
+## CSS result
+![](assets/images/css-validation.jpg)
+
+
+## JavaScript result
+![](assets/images/js-verification.jpg)
+
+
+## Responsiveness
+The responsiveness was tested using three different tools:
+- Chrome Developer Tools
+- http://ami.responsivedesign.is/
+- https://www.responsivedesignchecker.com/
+
+## Compatibility
+The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and appereance remains unchanged between these three on any device size. 
+
+## Lighthouse
+This [tool](#https://developers.google.com/web/tools/lighthouse) was used to test the performance and accesibility. It provided useful information in order to improve accesibility and SEO during creation process. Here are the final results:
+![](assets/images/lighthouse.jpg)
+
+
+## Known issues
+1. We chose not to set a label for tha Data field form. 
+2. 
+3. 
 
 
 
