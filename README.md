@@ -1,6 +1,6 @@
 # Budgy
 
-Budgy is an interactive front-end website for tracking the user's financial data. By default it loads some test data in order to demonstrate the website capabilities. This front end is intended to be connected to a data base, which stores the information for multiple users.
+Budgy is an interactive front-end website for tracking user's financial data. By default it loads some test data in order to demonstrate the website capabilities. This website is intended to be connected to a database, which stores the information for multiple users.
 ![](assets/images/responsive.jpg)
 
 # Table of content 
@@ -11,12 +11,11 @@ Budgy is an interactive front-end website for tracking the user's financial data
 - [User Experience](#user-experience)
     - [Features](#features)
 - [Technologies used](#technologies-used)
-- [Testig](#testing)
+- [Testing](#testing)
 - [Deployment](#deployment)
     - [Project deployment](#project-deployment)
     - [To fork the repository on GitHub](#to-fork-the-repository-on-github)
     - [To create a local clone of this project](#to-create-a-local-clone-of-this-project)
-- [Future work](#future-work)
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
@@ -82,7 +81,7 @@ The website also has a reset button. When this button is pressed, it will clear 
 
 # Testing
 
-The HTML and CSS code were tested using [W3C HTML Validator](#https://validator.w3.org/), respectively [W3C CSS Validator](#https://jigsaw.w3.org/css-validator/). JavaScript code was tested using [JSHint](#https://jshint.com/).
+The HTML and CSS code were tested using [W3C HTML Validator](https://validator.w3.org/), respectively [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). JavaScript code was tested using [JSHint](https://jshint.com/).
 A few bugs have been found during the development process which were corrected.
 
 ## HTML result
@@ -146,7 +145,7 @@ The site was deployed to GitHub pages. The steps to deploy a site are:
    5. Type git clone, and then paste the URL copied from GitHub.
    6. Press enter and the local clone will be created.
 
-# Credits & Media
+# Credits
 
 - Google Fonts 
 - W3 Schools
