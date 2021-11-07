@@ -18,7 +18,6 @@ Budgy is an interactive front-end website for tracking the user's financial data
     - [To create a local clone of this project](#to-create-a-local-clone-of-this-project)
 - [Future work](#future-work)
 - [Credits](#credits)
-- [Media](#media)
 - [Acknowledgements](#acknowledgements)
 
 
@@ -147,17 +146,20 @@ The site was deployed to GitHub pages. The steps to deploy a site are:
    5. Type git clone, and then paste the URL copied from GitHub.
    6. Press enter and the local clone will be created.
 
-# Credits
+# Credits & Media
+
 - Google Fonts 
 - W3 Schools
 - Stack Overflow
 - CSS Tricks
 - MDN WEB DOCS 
-- coolors.co  
-# Media
--
+- coolors.co - used to create color pallet
+- Wire Flow Wireframe Design - was used to create the wireframe
+- DelftStack (https://www.delftstack.com/howto/javascript/javascript-get-week-number/) - this was used as inspiration in order to get the current week of the year.
 # Acknowledgements
+ The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute.
 
+The live link to the Github repository can be found here: https://antocim.github.io/budgy/
 
 
 
