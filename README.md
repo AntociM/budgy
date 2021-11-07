@@ -27,7 +27,7 @@ The Wireframe for Budgy was produces using WireFlow. The wireframe's display is 
 ![](assets/images/wireframe.jpg)
 
 The design is split in three big parts.
-* **dashboard** - this where the user can see the current balance, monthly and weekly expenses.
+* **dashboard** - this is where the user can see the current balance, monthly and weekly expenses.
 * **entry-form** - this is where the user registers the entries. 
 * **entry-area** - this sections displays all the entries. 
 
@@ -56,12 +56,12 @@ This element is designed to allow the user to register entries. It composed from
 * **category** - user can choose from `groceries, food&drinks, Beauty&health, leisure, gifts, income`. Category is needed for later entry filtering.
 * **date** - date when the entry was processed. Used for later filtering.
 * **amount** - entry's amount.
-* **button** - the submit button which triggers the form submission.
+* **button** - the submit button, marked with "+", triggers the form submission.
 After submit button is clicked and entry was processed, the form will be cleared to make room for a new request. 
 ![](assets/images/entry-form.jpg)
 
 ### Entry Area
-This elements displays all the entries submitted via the form. At this point it is only for display. The intention is to also provide manipulation over the entries, like filtering capabilities, sorting. 
+This elements displays all the entries submitted via form. At this point it is only for display. The intention is to also provide manipulation over the entries, like filtering capabilities, sorting. 
 
 The entries from **income** category will always be displayed in green to make it more easily noticible by the user. 
 ![](assets/images/entry-area.jpg)
