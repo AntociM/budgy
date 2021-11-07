@@ -112,9 +112,55 @@ This [tool](#https://developers.google.com/web/tools/lighthouse) was used to tes
 
 
 ## Known issues
-1. We chose not to set a label for tha Data field form. 
-2. 
-3. 
+1. The calculation for extracting the week number from the entry date in the form, does not always work properly. This leads to faulty weekly reports.
+2. The Lighthouse report highlights missing label for the input date in the form. It was a design choice to not set a label text.
+
+# Deployment
+
+## Project deployment
+![](assets/images/deployment.jpg)  
+The site was deployed to GitHub pages. The steps to deploy a site are:
+
+1. In the GitHub repository, navigate to the Settings tab.
+2. Once in Settings, navigate to the Pages tab on the left hand side.
+3. Under Source, select the branch to master/main, then click save.
+4. The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+  
+## To fork the repository on GitHub
+![](assets/images/fork.jpg)  
+  A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository:
+
+  1. Log in to GitHub and locate the repository.
+  2. Click on the "Fork" button, located on the right hand site, to create a copy of the original repository in your GitHub Account. 
+
+## To create a local clone of this project
+![](assets/images/clone.jpg)  
+
+  Below are the detaild steps:
+
+  1. Under the repository’s name, click on the code tab.
+  2. In the Clone with HTTPS section, click on the clipboard icon to copy the given URL.
+   PRINT
+
+   3. In your IDE of choice, open Git Bash.
+   4. Change the current working directory to the location where you want the cloned directory to be made.
+   5. Type git clone, and then paste the URL copied from GitHub.
+   6. Press enter and the local clone will be created.
+
+# Credits
+- Google Fonts 
+- W3 Schools
+- Stack Overflow
+- CSS Tricks
+- MDN WEB DOCS 
+- coolors.co  
+# Media
+-
+# Acknowledgements
+
+
+
+
 
 
 
