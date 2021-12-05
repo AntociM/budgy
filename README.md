@@ -149,7 +149,7 @@ The site was deployed to GitHub pages. The steps to deploy a site are:
 
 - Google Fonts 
 - W3 Schools
-- Stack Overflow
+- [This solution](https://stackoverflow.com/questions/32777184/html-input-for-positive-whole-numbers-only-type-number/32784911?noredirect=1#comment61101594_32784911) was implemented to the Amount field to accept only positive, whole numbers values.
 - CSS Tricks
 - MDN WEB DOCS 
 - coolors.co - used to create color pallet
