@@ -108,6 +108,12 @@ The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and a
 This [tool](#https://developers.google.com/web/tools/lighthouse) was used to test the performance and accessibility. It provided useful information to improve accessibility and SEO during the creation process. Here are the final results:
 ![](assets/images/lighthouse.jpg)
 
+## Fixed Bugs
+
+During the development process, a series of errors pop up. The user's ability to add negative values in the Amount form field showed a lack of defensive design. This bug was solved by using `min` and `oninput` attributes for `input`. 
+
+Another error in the same form field was that only whole numbers could be added. This was solved by setting `step` input attribute's value to 0.01. Numeric values with two decimal places are allowed.  
+
 
 ## Known issues
 1. The calculation for extracting the week number from the entry date in the form does not always work properly. This leads to inaccurate weekly reports.
