@@ -1,6 +1,6 @@
 # Budgy
 
-Budgy is an interactive front-end website for tracking user's financial data. By default it loads some test data in order to demonstrate the website capabilities. This website is intended to be connected to a database, which stores the information for multiple users.
+Budgy is an interactive front-end website for tracking users' financial data. By default, it loads some test data to demonstrate the website's capabilities. This website is intended to be connected to a database that stores multiple users' information.
 ![](assets/images/responsive.jpg)
 
 # Table of content 
@@ -22,52 +22,52 @@ Budgy is an interactive front-end website for tracking user's financial data. By
 
 # Design Decisions
 ## Wireframe
-The Wireframe for Budgy was produces using WireFlow. The wireframe's display is for mobile divice and the final design has some changes that occured during the development process.
+The Wireframe for Budgy was produced using WireFlow. The wireframe's display is for mobile devices, and the final design has some changes that occurred during the development process.
 
 ![](assets/images/wireframe.jpg)
 
-The design is split in three big parts.
+The design is split into three significant parts.
 * **dashboard** - this is where the user can see the current balance, monthly and weekly expenses.
 * **entry-form** - this is where the user registers the entries. 
 * **entry-area** - this sections displays all the entries. 
 
 ## Design choices
-Typography - The font chosen is Roboto, sans-serif.
+Typography: The font chosen is Roboto, sans-serif.
 
 ## Color palette
-The chosen colour scheme is one based on yellow and dark tones of gray. This palette points the content out and creates a modern aspect for the website. Moreover gray is traditionally associated with business industry, corporate uniformity and professionalism.
+The chosen color scheme is based on yellow and dark tones of gray. This palette points the content out and creates a modern aspect for the website. Moreover, gray is traditionally associated with corporate uniformity and professionalism in the business industry.
 ![](assets/images/color-pallet.jpg)
 
 # User Experience
 ## Features
-Each section has different features designed to make the user experience more enjoyble. 
+Each section has different features designed to make the user experience more enjoyable. 
 
 ### Dashboard
-It is designed to promt user with information about balance, weekly and monthly expenses. **Balance** is defined as the sum of all expenses and incomes. **Weekly** represents the value made in the current week, with first day of the week being Monday. **Monthly** represents the sum of all expenses in the current month. 
+It is designed to prompt the user with information about balance, weekly and monthly expenses. **Balance** is defined as the sum of all expenses and incomes. **Weekly** represents the value made in the current week, with Monday's first day of the week. **Monthly** represents the sum of all expenses in the current month. 
 ![](assets/images/dashboard-sample.jpg)
 
-User can set its own spending limits on weekly and monthly basis. When the limit is exceeded, the value associated to it will be disaplyed in red. Here is an example where the **monthly** limit was excedeed. The same is true for **weekly** limit as well. 
+User can set their spending limits on a weekly and monthly basis. When the limit is exceeded, the value associated with it will be displayed in red. Here is an example where the **monthly** limit was exceeded, and the same is true for **weekly** limit as well. 
 ![](assets/images/dashboard-sample-limit-exceeded.jpg)
-The user is allowed to increase the limit. If it is increased above the reported expenses, the red style will dynamically dissapear.
+The user is allowed to increase the limit. If it is increased above the reported expenses, the red style will dynamically disappear.
 
 ### Entry Form
-This element is designed to allow the user to register entries. It composed from 5 elements:
+This element is designed to allow the user to register entries. It is composed of 5 elements:
 * **description** - entry description. Ex, where is the money coming from or where the money was spent.
-* **category** - user can choose from `groceries, food&drinks, Beauty&health, leisure, gifts, income`. Category is needed for later entry filtering.
-* **date** - date when the entry was processed. Used for later filtering.
+* **category** - user can choose from `groceries, food&drinks, Beauty&health, leisure, gifts, income`. A category is needed for later entry filtering.
+* **date** - the date when the entry was processed. Used for later filtering.
 * **amount** - entry's amount.
 * **button** - the submit button, marked with "+", triggers the form submission.
-After submit button is clicked and entry was processed, the form will be cleared to make room for a new request. 
+When the user press submit button, and the entry is processed, the form will be cleared to make room for a new request. 
 ![](assets/images/entry-form.jpg)
 
 ### Entry Area
-This elements displays all the entries submitted via form. At this point it is only for display. The intention is to also provide manipulation over the entries, like filtering capabilities, sorting. 
+This element displays all the entries submitted via the form. At this point, it is only for display. The intention is also to provide manipulation over the entries, like filtering capabilities, sorting. 
 
-The entries from **income** category will always be displayed in green to make it more easily noticible by the user. 
+The entries from **income** category will always be displayed in green to make them more easily noticeable by the user. 
 ![](assets/images/entry-area.jpg)
 
 ### Reset
-The website also has a reset button. When this button is pressed, it will clear the dashboard, entry-area and the forms.
+The website also has a reset button. When this button is pressed, it will clear the dashboard, entry area, and the forms.
 
 ![](assets/images/reset.jpg)
 
@@ -82,7 +82,7 @@ The website also has a reset button. When this button is pressed, it will clear 
 # Testing
 
 The HTML and CSS code were tested using [W3C HTML Validator](https://validator.w3.org/), respectively [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). JavaScript code was tested using [JSHint](https://jshint.com/).
-A few bugs have been found during the development process which were corrected.
+A few bugs have been found during the development process, which were corrected.
 
 ## HTML result
 ![](assets/images/html-verification.jpg)
@@ -102,16 +102,16 @@ The responsiveness was tested using three different tools:
 - https://www.responsivedesignchecker.com/
 
 ## Compatibility
-The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and appereance remains unchanged between these three on any device size. 
+The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and appearance remains unchanged between these three on any device size. 
 
 ## Lighthouse
-This [tool](#https://developers.google.com/web/tools/lighthouse) was used to test the performance and accesibility. It provided useful information in order to improve accesibility and SEO during creation process. Here are the final results:
+This [tool](#https://developers.google.com/web/tools/lighthouse) was used to test the performance and accessibility. It provided useful information to improve accessibility and SEO during the creation process. Here are the final results:
 ![](assets/images/lighthouse.jpg)
 
 
 ## Known issues
-1. The calculation for extracting the week number from the entry date in the form, does not always work properly. This leads to faulty weekly reports.
-2. The Lighthouse report highlights missing label for the input date in the form. It was a design choice to not set a label text.
+1. The calculation for extracting the week number from the entry date in the form does not always work properly. This leads to inaccurate weekly reports.
+2. The Lighthouse report highlights missing label for the input data in the form. It was a design choice not to set a label text.
 
 # Deployment
 
@@ -120,29 +120,29 @@ This [tool](#https://developers.google.com/web/tools/lighthouse) was used to tes
 The site was deployed to GitHub pages. The steps to deploy a site are:
 
 1. In the GitHub repository, navigate to the Settings tab.
-2. Once in Settings, navigate to the Pages tab on the left hand side.
+2. Once in Settings, navigate to the Pages tab on the left-hand side.
 3. Under Source, select the branch to master/main, then click save.
 4. The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
   
 ## To fork the repository on GitHub
 ![](assets/images/fork.jpg)  
-  A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository:
+  A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed, and changes can be made without affecting the original repository. Take the following steps to fork the repository:
 
   1. Log in to GitHub and locate the repository.
-  2. Click on the "Fork" button, located on the right hand site, to create a copy of the original repository in your GitHub Account. 
+  2. Click on the "Fork" button, located on the right-hand site, to create a copy of the original repository in your GitHub account. 
 
 ## To create a local clone of this project
 ![](assets/images/clone.jpg)  
 
-  Below are the detaild steps:
+  Below are the detailed steps:
 
-  1. Under the repository’s name, click on the code tab.
+  1. Under the repository's name, click on the code tab.
   2. In the Clone with HTTPS section, click on the clipboard icon to copy the given URL.
    PRINT
 
    3. In your IDE of choice, open Git Bash.
    4. Change the current working directory to the location where you want the cloned directory to be made.
-   5. Type git clone, and then paste the URL copied from GitHub.
+   5. Type git clone and paste the URL copied from GitHub.
    6. Press enter and the local clone will be created.
 
 # Credits
@@ -154,22 +154,8 @@ The site was deployed to GitHub pages. The steps to deploy a site are:
 - MDN WEB DOCS 
 - coolors.co - used to create color pallet
 - Wire Flow Wireframe Design - was used to create the wireframe
-- DelftStack (https://www.delftstack.com/howto/javascript/javascript-get-week-number/) - this was used as inspiration in order to get the current week of the year.
+- DelftStack (https://www.delftstack.com/howto/javascript/javascript-get-week-number/) - this was used as inspiration to get the current week of the year.
 # Acknowledgements
  The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute.
 
-The live link to the Github repository can be found here: https://antocim.github.io/budgy/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The live link to the Github repository can be found here: https://antocim.github.io/budgy/.
