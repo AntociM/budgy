@@ -21,7 +21,7 @@ function handleSubmit(event) {
     var table_row = document.createElement("tr");
     table_row.className = "entry-row";
 
-    if (cat === "income") {
+    if (cat === "Income") {
         table_row.innerHTML = `
         <td>${desc}</td>
         <td>${cat}</td>
@@ -131,7 +131,7 @@ function updateBalance() {
     var rows = document.getElementsByClassName("entry-row");
     var balance = 0;
     for (var row of rows) {
-        if (row.children[1].textContent === "income") {
+        if (row.children[1].textContent === "Income") {
             balance += parseFloat(row.children[3].textContent);
         } else {
             balance -= parseFloat(row.children[3].textContent);
@@ -155,7 +155,8 @@ function updateMonthlyBalance() {
     for (var row of rows) {
         var rowDate = new Date(row.children[2].textContent);
 
-        if (month === rowDate.getUTCMonth() && year === rowDate.getUTCFullYear() && row.children[1].textContent !== "income") {
+        if (month === rowDate.getUTCMonth() && year === rowDate.getUTCFullYear() && row.children[1].textContent !== "Income") {
+            console.log( parseFloat(row.children[3].textContent));
             monthlyAmount += parseFloat(row.children[3].textContent);
         }
     }
