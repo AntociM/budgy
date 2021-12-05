@@ -49,6 +49,7 @@
                 <label for="categories"></label>
                 <select name="categories" id="categories" required>
                     <option value="" disabled selected hidden>Category</option>
+                    <option class="categories-option" value="Income">Income</option>
                     <option class="categories-option" value="Groceries">Groceries</option>
                     <option class="categories-option" value="Food & Drinks">Food & Drinks</option>
                     <option class="categories-option" value="Beauty & Health">Beauty & Health</option>
@@ -65,8 +66,17 @@
                 <input type="date" id="date" name="date" required>
 
                 <label for="amount"></label>
-                <input type="number" min="0" step="1"  onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" id="amount" name="amount" placeholder="Amount" required>
-                
+                <input
+                type="number"
+                id="amount"
+                name="amount"
+                min="0"
+                step="0.01"
+                onfocus="this.previousValue = this.value"
+                onkeydown="this.previousValue = this.value"
+                oninput="validity.valid || (value = this.previousValue)"
+                placeholder="Amount">
+
                 <label for="submit"></label>
                 <input type="submit" id="submit" name="submit" value="+">
             </form>
@@ -146,7 +156,7 @@
                             <td>Salary</td>
                             <td>Income</td>
                             <td>2021-12-01</td>
-                            <td class="income">30000</td>
+                            <td class="income">37560</td>
                         </tr>
                     </tbody>
                 </table>
