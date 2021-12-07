@@ -158,7 +158,6 @@ function updateMonthlyBalance() {
         var rowDate = new Date(row.children[2].textContent);
 
         if (month === rowDate.getUTCMonth() && year === rowDate.getUTCFullYear() && row.children[1].textContent !== "Income") {
-            console.log( parseFloat(row.children[3].textContent));
             monthlyAmount += parseFloat(row.children[3].textContent);
         }
     }
@@ -185,11 +184,14 @@ function updateDashboard() {
 function currentWeeklyBalance() {
     var rows = document.getElementsByClassName("entry-row");
     var weeklyAmount = 0;
-    var weekNr = DateTime.now().weekNumber
+    var weekNr = DateTime.now().weekNumber;
+    var weekYear = DateTime.now().weekYear;
     
     for (var row of rows) {
         var rowDate = DateTime.fromFormat(row.children[2].textContent, 'yyyy-MM-dd');
-        console.log(rowDate.weekNumber);
+        if (weekNr === rowDate.weekNumber && weekYear === rowDate.weekYear) {
+            weeklyAmount += parseFloat(row.children[3].textContent);
+        }
     }
     
     var currentWeeklyBalance = document.getElementById("weekly-expenses");
