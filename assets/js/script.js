@@ -1,6 +1,4 @@
 import DateTime from '../../node_modules/luxon/src/datetime.js'
-const date = DateTime.now().weekNumber
-    console.log(`The current week number is ${date}`)
 
 /**
  * Called everytime form-input HTML element generates an Submit event. 
@@ -187,24 +185,13 @@ function updateDashboard() {
 function currentWeeklyBalance() {
     var rows = document.getElementsByClassName("entry-row");
     var weeklyAmount = 0;
-    var today = new Date();
-    var firstJan = new Date(today.getFullYear(), 0, 1);
-    var numberOfDays = Math.floor((today - firstJan) / (24 * 60 * 60 * 1000));
-    var weekNr = Math.ceil((today.getDay() + 1 + numberOfDays) / 7);
-    console.log("aici ar trebui")
-
+    var weekNr = DateTime.now().weekNumber
+    
     for (var row of rows) {
-        var rowDate = new Date(row.children[2].textContent);
-        var rowFirstJan = new Date(rowDate.getFullYear(), 0, 4);
-        var rowNumberOfDays = Math.floor((rowDate - rowFirstJan) / (24 * 60 * 60 * 1000));
-        var rowWeekNr = Math.ceil((rowDate.getDay() + 1 + rowNumberOfDays) / 7);
-        if (weekNr === rowWeekNr && today.getFullYear() === rowDate.getFullYear() && row.children[1].textContent !== "income") {
-            weeklyAmount += parseFloat(row.children[3].textContent);
-        }
+        var rowDate = DateTime.fromFormat(row.children[2].textContent, 'yyyy-MM-dd');
+        console.log(rowDate.weekNumber);
     }
     
-    
-
     var currentWeeklyBalance = document.getElementById("weekly-expenses");
     currentWeeklyBalance.textContent = weeklyAmount.toString();
 }
