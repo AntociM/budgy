@@ -1,4 +1,4 @@
-import DateTime from '../../node_modules/luxon/src/datetime.js'
+import DateTime from './luxon/src/datetime.js'
 
 /**
  * Called everytime form-input HTML element generates an Submit event. 
@@ -199,3 +199,5 @@ function currentWeeklyBalance() {
     var currentWeeklyBalance = document.getElementById("weekly-expenses");
     currentWeeklyBalance.textContent = weeklyAmount.toString();
 }
+
+window.addEventListener("load", updateDashboard);
