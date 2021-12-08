@@ -110,9 +110,17 @@ This [tool](#https://developers.google.com/web/tools/lighthouse) was used to tes
 
 ## Fixed Bugs
 
-During the development process, a series of errors pop up. The user's ability to add negative values in the Amount form field showed a lack of defensive design. This bug was solved by using `min` and `oninput` attributes for `input`. 
+During the development process, a series of errors pop up. 
+
+The user's ability to add negative values in the Amount form field showed a lack of defensive design. This bug was solved by using `min` and `oninput` attributes for `input`. 
 
 Another error in the same form field was that only whole numbers could be added. This was solved by setting `step` input attribute's value to 0.01. Numeric values with two decimal places are allowed.  
+
+During testing, a functional error emerged when calculating current week expenses. The week number of the year was inaccurate, and expenses were registered from Wednesday until next Tuesday. 
+
+This bug was fixed in currentWeeklyBalance function by using `DataTime` data structure from Luxon library. Properties `weekNumber` and `weekYear` were used to ensure the correct validation of user input in the week of the corresponding year.
+
+
 
 
 ## Known issues

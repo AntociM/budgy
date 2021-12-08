@@ -122,6 +122,7 @@ monthlyLimit.addEventListener("change", handleMonthlyLimit);
 var resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", handleResetButton);
 
+window.addEventListener("load", updateDashboard);
 
 /**
  * Iterates through the rows and calculates the current balance.
@@ -176,6 +177,7 @@ function updateDashboard() {
     updateWeeklySpendingLimit();
     updateMonthlySpendingLimit();
 }
+
 
 /**
  * This function iterates through entry-rows and extracts the inputs made in 
