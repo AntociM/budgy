@@ -10,6 +10,10 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Font awesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css" rel="stylesheet">
+
     <title>Budgy</title>
 </head>
 
@@ -23,15 +27,31 @@
                 <output id="balance">0</output>
             </div>
 
+            <div>
+                <label for="currency">Currency</label>
+                <select name="currency" id="currency" required>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="USD">USD</option>
+                    <option value="SEK">SEK</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                </select>
+            </div>
+
             <div class="monthly">
-                <h2>Monthly</h2>
+                <h2>Monthly balance</h2>
                 <output id="monthly-expenses">0</output>
+                <div>
                 <label for="monthly-limit"></label>
                 <input type="number" id="monthly-limit" name="monthly-limit" placeholder="Set limit">
+                    <i class="fas fa-question-circle"></i>
+                    <span class="tooltiptext">info</span>
+                    </div>
             </div>
 
             <div class="weekly">
-                <h2>Weekly</h2>
+                <h2>Weekly balance</h2>
                 <output id="weekly-expenses">0</output>
                 <label for="weekly-limit"></label>
                 <input type="number" id="weekly-limit" name="weekly-limit" placeholder="Set limit">
