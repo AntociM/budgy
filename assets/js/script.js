@@ -108,7 +108,9 @@ function handleResetButton(event) {
 }
 
 /**
- * 
+ * This function validates the user's input in the description field.
+ * Empty inputs are blocked, while alphanumeric and special characters 
+ * are valid.
  * @param {*} event 
  */
 function handleDescriptionValidation(event) {
@@ -126,16 +128,43 @@ function handleDescriptionValidation(event) {
     }
 }
 
+/**
+ * User's choice from the category's drop-down list will be validated 
+ * as follow: when entries history is clean, the first category input have
+ * to be "Income" after every choice is a valid one.
+ * This will prevent a negative balance value. 
+ */
 function handleCategoryValidation(event) {
-    if (event.target.value !== "")
-    {
+    if (event.target.value !== "") {
         if (event.target.value !== "Income" && document.getElementsByTagName("tbody")[0].children.length == 0) {
             event.target.classList.add("is-invalid");
             event.target.classList.remove("is-valid");
-        }
-        else{
+        } else {
             event.target.classList.add("is-valid");
             event.target.classList.remove("is-invalid");
+        }
+    }
+}
+
+
+/**
+ * 
+ * @param {*} event 
+ */
+
+function handleDateValidation(event) {
+    if (event.target.value !== "") {
+        var today = new Date();
+        var entry_date = new Date(event.target.value);
+
+        if ( entry_date <= today) {
+            event.target.classList.add("is-valid");
+            event.target.classList.remove("is-invalid");
+            console.log(today)
+        }
+        else {
+            event.target.classList.add("is-invalid");
+            event.target.classList.remove("is-valid");
         }
     }
 }
@@ -156,10 +185,9 @@ resetButton.addEventListener("click", handleResetButton);
 window.addEventListener("load", updateDashboard);
 
 document.getElementById("description").addEventListener("keydown", handleDescriptionValidation);
-
-document.getElementById("description").addEventListener("click", handleDescriptionValidation);
-
+document.getElementById("description").addEventListener("change", handleDescriptionValidation);
 document.getElementById("category").addEventListener("click", handleCategoryValidation);
+document.getElementById("date").addEventListener("change", handleDateValidation);
 
 /**
  * Iterates through the rows and calculates the current balance.
@@ -238,3 +266,6 @@ function currentWeeklyBalance() {
 }
 
 window.addEventListener("load", updateDashboard);
+
+var today = DateTime.now();
+document.getElementById("date").setAttribute("max", "".concat(today.year, "-", today.month,"-", today.day));
