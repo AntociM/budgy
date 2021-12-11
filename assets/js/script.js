@@ -1,5 +1,18 @@
 import DateTime from './luxon/src/datetime.js'
 
+//This function will bring tge entry form to the initial form.
+function resetEntryForm() {
+    document.getElementById("form-input").reset();
+    document.getElementById("description").classList.remove("is-valid");
+    document.getElementById("category").classList.remove("is-valid");
+    document.getElementById("date").classList.remove("is-valid");
+    document.getElementById("amount").classList.remove("is-valid");
+    document.getElementById("description").classList.remove("is-invalid");
+    document.getElementById("category").classList.remove("is-invalid");
+    document.getElementById("date").classList.remove("is-invalid");
+    document.getElementById("amount").classList.remove("is-invalid");
+}
+
 /**
  * Called everytime form-input HTML element generates an Submit event. 
  * It exatracts the values from the form then, it creates a new row, 
@@ -10,10 +23,10 @@ function handleSubmit(event) {
     event.preventDefault();
 
     // Get the elements value
-    var desc = event.target.children[1].value;
-    var cat = event.target.children[3].value;
-    var day = event.target.children[5].value;
-    var oneAmount = event.target.children[7].value;
+    var desc = document.getElementById("description").value;
+    var cat = document.getElementById("category").value;
+    var day = document.getElementById("date").value;
+    var oneAmount = document.getElementById("amount").value;
 
 
     // Get the table division
@@ -42,7 +55,7 @@ function handleSubmit(event) {
     // Append the new row to the HTML table element
     table.children[0].children[1].insertBefore(table_row, table.children[0].children[1].firstChild);
 
-    event.target.reset();
+    resetEntryForm();
     updateDashboard();
 }
 
@@ -103,6 +116,7 @@ function handleResetButton(event) {
     document.getElementById("monthly-limit").value = "";
     document.getElementById("weekly-limit").value = "";
     document.getElementById('form-input').reset();
+    resetEntryForm();
     updateDashboard();
 
 }
@@ -157,36 +171,32 @@ function handleDateValidation(event) {
         var today = new Date();
         var entry_date = new Date(event.target.value);
 
-        if ( entry_date <= today) {
+        if (entry_date <= today) {
             event.target.classList.add("is-valid");
             event.target.classList.remove("is-invalid");
-        }
-        else {
+        } else {
             event.target.classList.add("is-invalid");
             event.target.classList.remove("is-valid");
         }
     }
 }
-//
 
 
 function handleAmountValidation(event) {
-    if ( event.target.value !== "" ){
-        if ( /^0[0-9].*$/.test(event.target.value) ) {
+    if (event.target.value !== "") {
+        if (/^0[0-9].*$/.test(event.target.value)) {
             event.target.classList.add("is-invalid");
             event.target.classList.remove("is-valid");
-        }
-        else {
+        } else {
             event.target.classList.add("is-valid");
             event.target.classList.remove("is-invalid");
         }
-    }
-    else {
+    } else {
         event.target.classList.remove("is-invalid");
         event.target.classList.remove("is-valid");
     }
-    }
-    
+}
+
 // Add event listners for HTML elements
 document.getElementById('form-input').addEventListener('submit', handleSubmit);
 document.getElementById("weekly-limit").addEventListener("change", handleWeeklyLimit);
@@ -279,4 +289,4 @@ function currentWeeklyBalance() {
 window.addEventListener("load", updateDashboard);
 
 var today = DateTime.now();
-document.getElementById("date").setAttribute("max", "".concat(today.year, "-", today.month,"-", today.day));
+document.getElementById("date").setAttribute("max", "".concat(today.year, "-", today.month, "-", today.day));
