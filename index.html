@@ -29,7 +29,7 @@
             </div>
 
             <div>
-                <label for="currency">Currency</label>
+                <label for="currency">Currency:</label>
                 <select name="currency" id="currency" required>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
@@ -62,13 +62,12 @@
         </div>
 
         <div class="entry-form">
-
-            <form id="form-input" class="form-input">
-                <label for="description"></label>
-                <input type="text" id="description" name="description" placeholder="Description" required>
-
-                <label for="categories"></label>
-                <select name="categories" id="categories" required>
+            <form id="form-input" class="form-inline">
+                <label class="sr-only" for="Description">Name</label>
+                <input type="text" class="form-control my-1 mr-sm-2" id="Description" placeholder="Description">
+              
+                <label class="sr-only" for="Category">Category</label>
+                <select class="custom-select my-1 mr-sm-2" id="Category">
                     <option value="" disabled selected hidden>Category</option>
                     <option class="categories-option" value="Income">Income</option>
                     <option class="categories-option" value="Groceries">Groceries</option>
@@ -84,11 +83,11 @@
                     <option class="categories-option" value="Housing">Housing</option>
                 </select>
 
-                <label for="date"></label>
-                <input type="date" id="date" name="date" required>
+                <label class="sr-only" for="date">Date</label>
+                <input type="date" class="form-control my-1 mr-sm-2" id="date" name="date" required>
 
-                <label for="amount"></label>
-                <input
+                <label class="sr-only" for="amount">Amount</label>
+                <input class="form-control"
                 type="number"
                 id="amount"
                 name="amount"
@@ -99,9 +98,9 @@
                 oninput="validity.valid || (value = this.previousValue)"
                 placeholder="Amount">
 
-                <label for="submit"></label>
-                <input type="submit" id="submit" name="submit" value="+">
-            </form>
+                <label class="sr-only" for="submit">Add</label>
+                <button type="submit"  id="submit" class="btn btn-primary my-1 mr-sm-2">Add</button>
+              </form>
 
         </div>
 

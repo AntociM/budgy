@@ -35,32 +35,6 @@ h3 {
 }
 
 
-::-webkit-input-placeholder {
-    color: #E6EBE0;
-}
-
-:-moz-placeholder {
-    color: #E6EBE0;
-    opacity: 1;
-}
-
-::-moz-placeholder {
-    color: #E6EBE0;
-    opacity: 1;
-}
-
-:-ms-input-placeholder {
-    color: #E6EBE0;
-}
-
-::-ms-input-placeholder {
-    color: #E6EBE0;
-}
-
-::placeholder {
-    color: #E6EBE0;
-}
-
 
 /* Dashboard */
 
@@ -150,31 +124,8 @@ h3 {
     outline: none;
 }
 
-.entry-form input[type=number],
-input[type=date],
-input[type=text],
-select {
-    background-color: transparent;
-    border: 0px solid;
-    border-bottom: 2px solid;
-    color: #E6EBE0;
-    font-size: 1.2em;
-    font-family: 'Roboto', sans-serif;
-}
 
 #submit {
-    background-color: #E6EBE0;
-    border: none;
-    /* box-shadow:  15px #073B4C; */
-    border-radius: 10px;
-    color: black;
-    font-weight: bold;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: auto;
-    font-size: medium;
     margin: 10px;
 }
 
