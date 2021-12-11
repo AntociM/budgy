@@ -160,7 +160,6 @@ function handleDateValidation(event) {
         if ( entry_date <= today) {
             event.target.classList.add("is-valid");
             event.target.classList.remove("is-invalid");
-            console.log(today)
         }
         else {
             event.target.classList.add("is-invalid");
@@ -168,26 +167,38 @@ function handleDateValidation(event) {
         }
     }
 }
+//
 
+
+function handleAmountValidation(event) {
+    if ( event.target.value !== "" ){
+        if ( /^0[0-9].*$/.test(event.target.value) ) {
+            event.target.classList.add("is-invalid");
+            event.target.classList.remove("is-valid");
+        }
+        else {
+            event.target.classList.add("is-valid");
+            event.target.classList.remove("is-invalid");
+        }
+    }
+    else {
+        event.target.classList.remove("is-invalid");
+        event.target.classList.remove("is-valid");
+    }
+    }
+    
 // Add event listners for HTML elements
-var form = document.getElementById('form-input');
-form.addEventListener('submit', handleSubmit);
-
-var weeklyLimit = document.getElementById("weekly-limit");
-weeklyLimit.addEventListener("change", handleWeeklyLimit);
-
-var monthlyLimit = document.getElementById("monthly-limit");
-monthlyLimit.addEventListener("change", handleMonthlyLimit);
-
-var resetButton = document.getElementById("reset");
-resetButton.addEventListener("click", handleResetButton);
-
+document.getElementById('form-input').addEventListener('submit', handleSubmit);
+document.getElementById("weekly-limit").addEventListener("change", handleWeeklyLimit);
+document.getElementById("monthly-limit").addEventListener("change", handleMonthlyLimit);
+document.getElementById("reset").addEventListener("click", handleResetButton);
 window.addEventListener("load", updateDashboard);
 
-document.getElementById("description").addEventListener("keydown", handleDescriptionValidation);
+document.getElementById("description").addEventListener("keyup", handleDescriptionValidation);
 document.getElementById("description").addEventListener("change", handleDescriptionValidation);
 document.getElementById("category").addEventListener("click", handleCategoryValidation);
 document.getElementById("date").addEventListener("change", handleDateValidation);
+document.getElementById("amount").addEventListener("keyup", handleAmountValidation);
 
 /**
  * Iterates through the rows and calculates the current balance.
