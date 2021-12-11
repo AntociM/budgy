@@ -25,9 +25,9 @@
     <h1 class="text-center">BUDGY</h1>
     <h1 class="text-center">Your Finance Buddy</h1>
     <!-- </div> -->
-    <div class="container-fluid">
+    <div class="container-md">
 
-        <div class="container-fluid">
+        <div class="container-md">
 
             <div class="row">
                 <div class="col">Balance:
@@ -69,43 +69,61 @@
 
     </div>
 
-    <div class="container-fluid">
-        <form id="form-input" class="form-inline">
-            <label class="sr-only" for="Description">Name</label>
-            <input type="text" class="form-control my-1 mr-sm-2" id="Description" placeholder="Description">
+    <div class="container-md">
+        <form id="form-input" class="form-row">
+            <div class="col-md-3 mb-3">
+                <label class="sr-only" for="description">Name</label>
+                <input type="text" class="form-control my-1 mr-sm-2 " id="description"
+                    placeholder="Description" required>
+                <div class="invalid-feedback">
+                    Ex: salary, spa, shoes.
+                </div>
+            </div>
 
-            <label class="sr-only" for="Category">Category</label>
-            <select class="custom-select my-1 mr-sm-2" id="Category">
-                <option value="" disabled selected hidden>Category</option>
-                <option class="categories-option" value="Income">Income</option>
-                <option class="categories-option" value="Groceries">Groceries</option>
-                <option class="categories-option" value="Restaurant">Restaurant</option>
-                <option class="categories-option" value="Health">Health</option>
-                <option class="categories-option" value="Beauty">Beauty</option>
-                <option class="categories-option" value="Gifts">Gifts</option>
-                <option class="categories-option" value="Transport">Transport</option>
-                <option class="categories-option" value="Hobbies">Hobbies</option>
-                <option class="categories-option" value="Shopping">Shopping</option>
-                <option class="categories-option" value="Bills">Bills</option>
-                <option class="categories-option" value="Loans">Loans</option>
-                <option class="categories-option" value="Housing">Housing</option>
-            </select>
+            <div class="col-md-3 mb-3">
 
-            <label class="sr-only" for="date">Date</label>
-            <input type="date" class="form-control my-1 mr-sm-2" id="date" name="date" required>
+                <label class="sr-only" for="Category">Category</label>
+                <select class="custom-select my-1 mr-sm-2" id="Category">
+                    <option value="" disabled selected hidden>Category</option>
+                    <option class="categories-option" value="Income">Income</option>
+                    <option class="categories-option" value="Groceries">Groceries</option>
+                    <option class="categories-option" value="Restaurant">Restaurant</option>
+                    <option class="categories-option" value="Health">Health</option>
+                    <option class="categories-option" value="Beauty">Beauty</option>
+                    <option class="categories-option" value="Gifts">Gifts</option>
+                    <option class="categories-option" value="Transport">Transport</option>
+                    <option class="categories-option" value="Hobbies">Hobbies</option>
+                    <option class="categories-option" value="Shopping">Shopping</option>
+                    <option class="categories-option" value="Bills">Bills</option>
+                    <option class="categories-option" value="Loans">Loans</option>
+                    <option class="categories-option" value="Housing">Housing</option>
+                </select>
+            </div>
 
-            <label class="sr-only" for="amount">Amount</label>
-            <input class="form-control" type="number" id="amount" name="amount" min="0" step="0.01"
-                onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value"
-                oninput="validity.valid || (value = this.previousValue)" placeholder="Amount">
+            <div class="col-md-3 mb-3">
 
-            <label class="sr-only" for="submit">Add</label>
-            <button type="submit" id="submit" class="btn btn-primary my-1 mr-sm-2">Add</button>
+                <label class="sr-only" for="date">Date</label>
+                <input type="date" class="form-control my-1 mr-sm-2" id="date" name="date" required>
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <label class="sr-only" for="amount">Amount</label>
+                <input class="form-control" type="number" id="amount" name="amount" min="0" step="0.01"
+                    onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value"
+                    oninput="validity.valid || (value = this.previousValue)" placeholder="Amount">
+            </div>
+            <div class="col-md-3 mb-3">
+
+                <label class="sr-only" for="submit">Add</label>
+                <button type="submit" id="submit" class="btn btn-primary my-1 mr-sm-2">Add</button>
+            </div>
+
         </form>
 
     </div>
 
-    <div class="container-fluid">
+    <div class="container-md">
 
         <!-- <div id="entry-filters"></div> -->
         <div id="entry-table">

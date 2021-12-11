@@ -40,7 +40,7 @@ function handleSubmit(event) {
     }
 
     // Append the new row to the HTML table element
-    table.children[0].children[1].insertBefore(table_row,table.children[0].children[1].firstChild);
+    table.children[0].children[1].insertBefore(table_row, table.children[0].children[1].firstChild);
 
     event.target.reset();
     updateDashboard();
@@ -64,8 +64,7 @@ function updateWeeklySpendingLimit() {
     var weeklyAmountElement = document.getElementById("weekly-expenses");
     if (parseFloat(weeklyAmountElement.textContent) > weeklyLimit && weeklyLimit != "") {
         weeklyAmountElement.className = "error";
-    }
-    else{
+    } else {
         weeklyAmountElement.classList.remove("error");
     }
 }
@@ -82,32 +81,50 @@ function handleMonthlyLimit(event) {
 /**
  * 
  */
- function updateMonthlySpendingLimit() {
+function updateMonthlySpendingLimit() {
     var monthlyLimit = document.getElementById("monthly-limit").value;
-    var monthlyAmountElement =  document.getElementById("monthly-expenses");
+    var monthlyAmountElement = document.getElementById("monthly-expenses");
     if (parseFloat(monthlyAmountElement.textContent) > monthlyLimit && monthlyLimit != "") {
         monthlyAmountElement.className = "error";
-    }
-    else {
+    } else {
         monthlyAmountElement.classList.remove("error");
     }
- }
+}
 
- /**
-  * This function will clear the data inputts fields, update the Dashboard area
-  * and clear the weekly and monthly limits
-  * @param {*} event 
-  */
- function handleResetButton(event) {
-     event.preventDefault();
-     var clearTbody = document.getElementsByTagName("tbody")[0];
-     clearTbody.innerHTML = "";
-     document.getElementById("monthly-limit").value = "";
-     document.getElementById("weekly-limit").value = "";
-     document.getElementById('form-input').reset();
-     updateDashboard();
+/**
+ * This function will clear the data inputts fields, update the Dashboard area
+ * and clear the weekly and monthly limits
+ * @param {*} event 
+ */
+function handleResetButton(event) {
+    event.preventDefault();
+    var clearTbody = document.getElementsByTagName("tbody")[0];
+    clearTbody.innerHTML = "";
+    document.getElementById("monthly-limit").value = "";
+    document.getElementById("weekly-limit").value = "";
+    document.getElementById('form-input').reset();
+    updateDashboard();
 
- }
+}
+
+/**
+ * 
+ * @param {*} event 
+ */
+function handleDescriptionValidation(event) {
+    if (event.target.value == "") {
+        event.target.classList.remove("is-valid");
+        event.target.classList.remove("is-invalid");
+    } else {
+        if (/\d/.test(event.target.value) || /[a-zA-Z]/.test(event.target.value)) {
+            event.target.classList.add("is-valid");
+            event.target.classList.remove("is-invalid");
+        } else {
+            event.target.classList.add("is-invalid");
+            event.target.classList.remove("is-valid");
+        }
+    }
+}
 
 // Add event listners for HTML elements
 var form = document.getElementById('form-input');
@@ -123,6 +140,10 @@ var resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", handleResetButton);
 
 window.addEventListener("load", updateDashboard);
+
+document.getElementById("description").addEventListener("keydown", handleDescriptionValidation);
+
+document.getElementById("description").addEventListener("click", handleDescriptionValidation);
 
 /**
  * Iterates through the rows and calculates the current balance.
@@ -188,14 +209,14 @@ function currentWeeklyBalance() {
     var weeklyAmount = 0;
     var weekNr = DateTime.now().weekNumber;
     var weekYear = DateTime.now().weekYear;
-    
+
     for (var row of rows) {
         var rowDate = DateTime.fromFormat(row.children[2].textContent, 'yyyy-MM-dd');
         if (weekNr === rowDate.weekNumber && weekYear === rowDate.weekYear && row.children[1].textContent !== "Income") {
             weeklyAmount += parseFloat(row.children[3].textContent);
         }
     }
-    
+
     var currentWeeklyBalance = document.getElementById("weekly-expenses");
     currentWeeklyBalance.textContent = weeklyAmount.toString();
 }
