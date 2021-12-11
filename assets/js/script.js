@@ -126,6 +126,20 @@ function handleDescriptionValidation(event) {
     }
 }
 
+function handleCategoryValidation(event) {
+    if (event.target.value !== "")
+    {
+        if (event.target.value !== "Income" && document.getElementsByTagName("tbody")[0].children.length == 0) {
+            event.target.classList.add("is-invalid");
+            event.target.classList.remove("is-valid");
+        }
+        else{
+            event.target.classList.add("is-valid");
+            event.target.classList.remove("is-invalid");
+        }
+    }
+}
+
 // Add event listners for HTML elements
 var form = document.getElementById('form-input');
 form.addEventListener('submit', handleSubmit);
@@ -144,6 +158,8 @@ window.addEventListener("load", updateDashboard);
 document.getElementById("description").addEventListener("keydown", handleDescriptionValidation);
 
 document.getElementById("description").addEventListener("click", handleDescriptionValidation);
+
+document.getElementById("category").addEventListener("click", handleCategoryValidation);
 
 /**
  * Iterates through the rows and calculates the current balance.
