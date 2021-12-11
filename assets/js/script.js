@@ -191,7 +191,7 @@ function currentWeeklyBalance() {
     
     for (var row of rows) {
         var rowDate = DateTime.fromFormat(row.children[2].textContent, 'yyyy-MM-dd');
-        if (weekNr === rowDate.weekNumber && weekYear === rowDate.weekYear) {
+        if (weekNr === rowDate.weekNumber && weekYear === rowDate.weekYear && row.children[1].textContent !== "Income") {
             weeklyAmount += parseFloat(row.children[3].textContent);
         }
     }
