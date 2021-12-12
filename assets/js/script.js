@@ -204,12 +204,12 @@ function handleAmountValidation(event) {
  * user selects different currency types. 
  * @param {*} event 
  */
-function handleCurrencyInput (event) {
-    if(event.target.value != currencyValueGlobal && document.getElementsByTagName("tbody")[0].children.length != 0) {
+function handleCurrencyInput(event) {
+    if (event.target.value != currencyValueGlobal && document.getElementsByTagName("tbody")[0].children.length != 0) {
         alert("You cannot change currency.");
 
-        for(var option, i = 0; option = event.target.options[i]; i++) {
-            if(option.value == currencyValueGlobal) {
+        for (var option, i = 0; option = event.target.options[i]; i++) {
+            if (option.value == currencyValueGlobal) {
                 event.target.selectedIndex = i;
                 break;
             }
@@ -316,28 +316,27 @@ document.getElementById("date").setAttribute("max", "".concat(today.year, "-", t
 
 
 function openModal() {
-    document.getElementById("backdrop").style.display = "block"
-    document.getElementById("instructionModal").style.display = "block"
-    document.getElementById("instructionModal").classList.add("show")
+    document.getElementById("backdrop").style.display = "block";
+    document.getElementById("instructionModal").style.display = "block";
+    document.getElementById("instructionModal").classList.add("show");
 }
+
 function closeModal() {
-    document.getElementById("backdrop").style.display = "none"
-    document.getElementById("instructionModal").style.display = "none"
-    document.getElementById("instructionModal").classList.remove("show")
+    document.getElementById("backdrop").style.display = "none";
+    document.getElementById("instructionModal").style.display = "none";
+    document.getElementById("instructionModal").classList.remove("show");
 }
 // Get the modal
 var modal = document.getElementById('instructionModal');
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    closeModal()
-  }
-}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+};
 
 document.getElementById("instruction-button").addEventListener("click", openModal);
 document.getElementById("instruction-button").addEventListener("click", openModal);
 document.getElementById("close-button").addEventListener("click", closeModal);
 document.getElementById("close-button").addEventListener("click", closeModal);
-
-
