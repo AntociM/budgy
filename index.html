@@ -22,11 +22,17 @@
 
 <body>
     <!-- <div class="row"> -->
-    <h1 class="text-center">BUDGY</h1>
-    <h1 class="text-center">Your Finance Buddy</h1>
-    <!-- </div> -->
     <div class="container-md">
+        <div class="row justify-content-center align-items-center">
+            <img src="assets/images/logo.jpg" alt="Wallet" style="border-radius: 100px; width: 70px; height: auto;">
+            <h1>Budgy</h1>
+        </div>
+        <h2 class="text-center">Your Finance Buddy</h2>
+    </div>
 
+
+    <!-- </div> -->
+    <div class="container-md" id="dashboard">
         <div class="container-md">
 
             <div class="row">
@@ -54,7 +60,8 @@
                     <output id="monthly-expenses">0</output>
                     <label for="monthly-limit"></label>
                     <input type="number" min="0" oninput="this.value = 
-                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" id="monthly-limit" name="monthly-limit" placeholder="Set limit">
+                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" id="monthly-limit"
+                        name="monthly-limit" placeholder="Set limit">
                 </div>
 
                 <div class="col weekly">
@@ -62,7 +69,8 @@
                     <output id="weekly-expenses">0</output>
                     <label for="weekly-limit"></label>
                     <input type="number" min="0" oninput="this.value = 
-                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" id="weekly-limit" name="weekly-limit" placeholder="Set limit">
+                    !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" id="weekly-limit"
+                        name="weekly-limit" placeholder="Set limit">
                 </div>
             </div>
         </div>
@@ -75,8 +83,8 @@
         <form id="form-input" class="form-row">
             <div class="col-md-3 mb-3">
                 <label class="sr-only" for="description">Name</label>
-                <input type="text" class="form-control my-1 mr-sm-2 " id="description"
-                    placeholder="Description" required>
+                <input type="text" class="form-control my-1 mr-sm-2 " id="description" placeholder="Description"
+                    required>
                 <div class="invalid-feedback">
                     Ex: salary, spa, shoes.
                 </div>
@@ -206,53 +214,55 @@
                 </tbody>
             </table>
         </div>
-     
-        <!-- Button trigger modal -->
-
-    </div>
 
 
-    
-    <input class="reset" id="reset" type="button" name="reset" value="Reset">
-
-
-    <button type="button" class="btn btn-primary" id="instruction-button">
-        Instruction
-    </button>
-    <div class="modal fade" id="instructionModal" tabindex="-1" aria-labelledby="instructionModalLabel" aria-modal="true"
-        role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="instructionModalLabel">How it works</h3>
-                    <button type="button" class="close" aria-label="Close" id="x-button" onclick="closeModal()">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h5>Log your entries</h5>
-                    <p>You can introduce your income and expenses using an entry form with four fields.</p>
-                    <p><i>Income</i> defines money received, especially regularly. Income entries are represented with green color in the entries table. </p>
-                    <p>An <i>expense</i> is an amount of money needed or used to do or buy something.</p>
-                    <p>Your entries will appear as a list, with the most recent input on top. </p>
-                    <p><b>Description</b> is a short report of your income/expenses.</p>
-                    <p><b>Category</b>  <mark>Income</mark> is required to be your first category, money received. All other categories represent expenses.</p>
-                    <p><b>Date</b> past and current date.</p> 
-                    <p><b>Amount</b> whole and two decimal places numbers, using comma character.</p>
-                    <h5>Dashboard</h5>
-                    <p><b>Balance</b> displays current balance, a sum of incomes, and subtraction of expenses.</p>
-                    <p><b>Weekly balance</b> shows expenses you made in a week's time (Monday-Sunday).</p>
-                    <p><b>Monthly balance</b> shows your monthly payments.</p> 
-                    <p><b>Weekly and monthly expenses limits</b> are your chosen limits. When these amounts are exceeded, your limits will be displayed red.</p> 
-                </div>
-                <div class="modal-footer"> 
-                    <button type="button" class="btn btn-secondary" id="close-button" onclick="closeModal()">Close</button>
+        <!-- <div class="container-md"> -->
+        <button type="button" class="btn btn-primary" id="instruction-button">
+            Instruction
+        </button>
+        <div class="modal fade" id="instructionModal" tabindex="-1" aria-labelledby="instructionModalLabel"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="instructionModalLabel">How it works</h3>
+                        <button type="button" class="close" aria-label="Close" id="x-button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Log your entries</h5>
+                        <p>You can introduce your income and expenses using an entry form with four fields.</p>
+                        <p><i>Income</i> defines money received, especially regularly. Income entries are
+                            represented with green color in the entries table. </p>
+                        <p>An <i>expense</i> is an amount of money needed or used to do or buy something.</p>
+                        <p>Your entries will appear as a list, with the most recent input on top. </p>
+                        <p><b>Description</b> is a short report of your income/expenses.</p>
+                        <p><b>Category</b> <mark>Income</mark> is required to be your first category, money
+                            received. All other categories represent expenses.</p>
+                        <p><b>Date</b> past and current date.</p>
+                        <p><b>Amount</b> whole and two decimal places numbers, using comma character.</p>
+                        <h5>Dashboard</h5>
+                        <p><b>Balance</b> displays current balance, a sum of incomes, and subtraction of expenses.
+                        </p>
+                        <p><b>Weekly balance</b> shows expenses you made in a week's time (Monday-Sunday).</p>
+                        <p><b>Monthly balance</b> shows your monthly payments.</p>
+                        <p><b>Weekly and monthly expenses limits</b> are your chosen limits. When these amounts are
+                            exceeded, your limits will be displayed red.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="close-button">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+        <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+        <!-- </div> -->
 
+        <button class="btn btn-danger" id="reset" type="button" name="reset">Reset</button>
+
+
+    </div>
 
     <!-- JavaScript file -->
     <script type="module" src="assets/js/script.js"></script>

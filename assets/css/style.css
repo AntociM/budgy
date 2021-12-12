@@ -38,38 +38,21 @@ h3 {
 
 /* Dashboard */
 
-.dashboard {
-    display: grid;
-    grid-gap: 35px;
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: 10px;
-    height: auto;
-    width: auto;
-    background-color: #073B4C;
-    margin: 10px;
+#dashboard {
+    background-image: linear-gradient(to bottom right,#073B4C, #01779e);
+    background-size: cover;
     padding: 20px;
     color: #E6EBE0;
+    border-radius: 20px;
 }
 
-.dashboard input:focus {
-    outline: none;
-}
-
-.dashboard input[type=number] {
-    background-color: transparent;
-    border: 0px solid;
-    color: #E6EBE0;
-    font-size: medium;
-    font-family: 'Roboto', sans-serif;
-}
-
-.balance {
+/* .balance {
     grid-column: 1 / 2;
     grid-row: 1;
     font-size: 200%;
-}
+} */
 
-.monthly {
+/* .monthly {
     display: flex;
     flex-direction: column;
     grid-column: 1;
@@ -78,7 +61,6 @@ h3 {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 0 3px #465775;
-    /* 118AB2 */
 }
 
 #monthly-expenses {
@@ -98,7 +80,7 @@ h3 {
 
 #weekly-expenses {
     font-size: 200%;
-}
+} */
 
 /* Entry Form */
 .entry-form {
@@ -177,79 +159,4 @@ thead {
     margin-left: 10px;
     margin-right: 10px;
     /* font-size: 16px; */
-}
-
-
-/* tablet media queries */
-@media screen and (max-width: 1024px) {
-    body {
-        font-size: 1em;
-    }
-
-    .budgy-container {
-        width: 90%;
-    }
-
-    .dashboard {
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 5px;
-        padding: 10px;
-        margin: 0;
-    }
-
-    .entry-form {
-        padding: 10px;
-        margin: 0;
-        margin-top: 15px;
-    }
-
-    .entry-area {
-        padding: 10px;
-        margin: 0;
-        margin-top: 15px;
-    }
-
-    .weekly {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .reset {
-        padding: 10px;
-        margin: 0;
-        margin-top: 15px;
-    }
-}
-
-/* mobile media queries */
-@media screen and (max-width: 500px) {
-    td {
-        font-size: 1em;
-    }
-    
-    body {
-        font-size: 0.6em;
-    }
-
-    .dashboard input[type=number] {
-        font-size: 1.2em;
-    }
-
-    .entry-form input[type=number],
-    input[type=date],
-    input[type=text],
-    select {
-        font-size: 1.6em;
-    }
-
-    .entry-form {
-        height: auto;
-    }
-
-    th {
-        font-size: 0.9em;
-    }
-
-    
-
 }
