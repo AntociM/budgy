@@ -339,4 +339,4 @@ window.onclick = function (event) {
 document.getElementById("instruction-button").addEventListener("click", openModal);
 document.getElementById("instruction-button").addEventListener("click", openModal);
 document.getElementById("close-button").addEventListener("click", closeModal);
-document.getElementById("close-button").addEventListener("click", closeModal);
+document.getElementById("x-button").addEventListener("click", closeModal);

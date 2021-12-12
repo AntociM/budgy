@@ -112,19 +112,25 @@ This [tool](#https://developers.google.com/web/tools/lighthouse) was used to tes
 
 During the development process, a series of errors pop up. 
 
-The user's ability to add negative values in the Amount form field showed a lack of defensive design. This bug was solved by using `min` and `oninput` attributes for `input`. 
+The user's ability to add negative values in the Amount form field showed a defensive design. I solved this bug by using `min` and `oninput` attributes for `input`. 
 
-Another error in the same form field was that only whole numbers could be added. This was solved by setting `step` input attribute's value to 0.01. Numeric values with two decimal places are allowed.  
+Another error in the same form field was that the user could add only whole numbers. This was solved by setting the `step` input attribute's value to 0.01. Numeric values with two decimal places are allowed. 
 
-During testing, a functional error emerged when calculating current week expenses. The week number of the year was inaccurate, and expenses were registered from Wednesday until next Tuesday. 
+The user was able to introduce empty input in `Description` form field. Problem fixed using Bootstrap validation classes `is-valid` and `is-invalid`. At least one alphanumeric character is requested. If not provided, an error message will appear. 
 
-This bug was fixed in currentWeeklyBalance function by using `DataTime` data structure from Luxon library. Properties `weekNumber` and `weekYear` were used to ensure the correct validation of user input in the week of the corresponding year.
+I used 'min' attribute to prevent negative values for `input type="number"` when setting the weekly and monthly limits. 
+
+The current balance was displayed with multiple decimals. This was solved with JavaScript `toFixed()`.
+
+During testing, a functional error emerged when calculating current week expenses. The week number of the year was inaccurate, and expenses were registered from Wednesday until next Tuesday. This bug was fixed in currentWeeklyBalance function by using `DataTime` data structure from Luxon library. Properties `weekNumber` and `weekYear` were used to ensure the correct validation of user input in the week of the corresponding year.
+
+
 
 
 
 
 ## Known issues
-1. The calculation for extracting the week number from the entry date in the form does not always work properly. This leads to inaccurate weekly reports.
+1. Description data input is validated and prompted as invalid while the user is typing, but data is not validated on the `submit` button. The user's input will be reported in the list.
 2. The Lighthouse report highlights missing label for the input data in the form. It was a design choice not to set a label text.
 
 # Deployment
