@@ -228,7 +228,7 @@ function updateBalance() {
     }
 
     var currentBalance = document.getElementById("balance");
-    currentBalance.textContent = balance.toString();
+    currentBalance.textContent = balance.toFixed(2);
 }
 
 /**
