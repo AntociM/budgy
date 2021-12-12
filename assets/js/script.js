@@ -290,3 +290,31 @@ window.addEventListener("load", updateDashboard);
 
 var today = DateTime.now();
 document.getElementById("date").setAttribute("max", "".concat(today.year, "-", today.month, "-", today.day));
+
+
+function openModal() {
+    document.getElementById("backdrop").style.display = "block"
+    document.getElementById("instructionModal").style.display = "block"
+    document.getElementById("instructionModal").classList.add("show")
+}
+function closeModal() {
+    document.getElementById("backdrop").style.display = "none"
+    document.getElementById("instructionModal").style.display = "none"
+    document.getElementById("instructionModal").classList.remove("show")
+}
+// Get the modal
+var modal = document.getElementById('instructionModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    closeModal()
+  }
+}
+
+document.getElementById("instruction-button").addEventListener("click", openModal);
+document.getElementById("instruction-button").addEventListener("click", openModal);
+
+document.getElementById("close-button").addEventListener("click", closeModal);
+document.getElementById("close-button").addEventListener("click", closeModal);
+

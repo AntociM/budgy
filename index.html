@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#465775">
 
     <!-- Stylesheet -->
-    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!--Font awesome-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css" rel="stylesheet">
@@ -206,12 +206,53 @@
                 </tbody>
             </table>
         </div>
+     
+        <!-- Button trigger modal -->
+
     </div>
 
+
+    
     <input class="reset" id="reset" type="button" name="reset" value="Reset">
 
 
+    <button type="button" class="btn btn-primary" id="instruction-button">
+        Instruction
+    </button>
+    <div class="modal fade" id="instructionModal" tabindex="-1" aria-labelledby="instructionModalLabel" aria-modal="true"
+        role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="instructionModalLabel">How it works</h3>
+                    <button type="button" class="close" aria-label="Close" id="x-button" onclick="closeModal()">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Log your entries</h5>
+                    <p>You can introduce your income and expenses using an entry form with four fields.</p>
+                    <p><i>Income</i> defines money received, especially regularly. Income entries are represented with green color in the entries table. </p>
+                    <p>An <i>expense</i> is an amount of money needed or used to do or buy something.</p>
+                    <p>Your entries will appear as a list, with the most recent input on top. </p>
+                    <p><b>Description</b> is a short report of your income/expenses.</p>
+                    <p><b>Category</b>  <mark>Income</mark> is required to be your first category, money received. All other categories represent expenses.</p>
+                    <p><b>Date</b> past and current date.</p> 
+                    <p><b>Amount</b> whole and two decimal places numbers, using comma character.</p>
+                    <h5>Dashboard</h5>
+                    <p><b>Balance</b> displays current balance, a sum of incomes, and subtraction of expenses.</p>
+                    <p><b>Weekly balance</b> shows expenses you made in a week's time (Monday-Sunday).</p>
+                    <p><b>Monthly balance</b> shows your monthly payments.</p> 
+                    <p><b>Weekly and monthly expenses limits</b> are your chosen limits. When these amounts are exceeded, your limits will be displayed red.</p> 
+                </div>
+                <div class="modal-footer"> 
+                    <button type="button" class="btn btn-secondary" id="close-button" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
 
     <!-- JavaScript file -->
     <script type="module" src="assets/js/script.js"></script>
