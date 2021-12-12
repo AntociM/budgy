@@ -19,7 +19,7 @@ h5 {
 }
 
 .income {
-    color: rgb(62, 151, 35);
+    color: rgb(48, 117, 27);
     font-weight: bold;
 }
 
@@ -67,7 +67,7 @@ h5 {
     background-color: #cc3f0c;
 }
 
-
+/*Modal*/
 .modal-dialog {
     overflow-y: initial;
  }
