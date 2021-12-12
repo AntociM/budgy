@@ -2,7 +2,7 @@ import DateTime from './luxon/src/datetime.js'
 
 var currencyValueGlobal = document.getElementById("currency").value;
 
-//This function will bring tge entry form to the initial form.
+//This function will bring the entry form to the initial form.
 function resetEntryForm() {
     document.getElementById("form-input").reset();
     document.getElementById("description").classList.remove("is-valid");
@@ -206,7 +206,7 @@ function handleAmountValidation(event) {
  */
 function handleCurrencyInput(event) {
     if (event.target.value != currencyValueGlobal && document.getElementsByTagName("tbody")[0].children.length != 0) {
-        alert("You cannot change currency.");
+        alert("You cannot change currency in the middle of the session. If you want to change the currency, you need to reset.");
 
         for (var option, i = 0; option = event.target.options[i]; i++) {
             if (option.value == currencyValueGlobal) {

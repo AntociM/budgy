@@ -14,12 +14,12 @@ body {
     text-align: center;
 }
 
-h3 {
-    margin: 0;
+h5 {
+    font-weight: lighter;
 }
 
 .income {
-    color: rgb(18, 75, 18);
+    color: rgb(62, 151, 35);
     font-weight: bold;
 }
 
@@ -46,117 +46,33 @@ h3 {
     border-radius: 20px;
 }
 
-/* .balance {
-    grid-column: 1 / 2;
-    grid-row: 1;
-    font-size: 200%;
-} */
-
-/* .monthly {
-    display: flex;
-    flex-direction: column;
-    grid-column: 1;
-    grid-row: 2;
-    background-color: #465775;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 3px #465775;
-}
-
-#monthly-expenses {
-    font-size: 200%;
-}
-
-.weekly {
-    display: flex;
-    flex-direction: column;
-    grid-column: 2;
-    grid-row: 2;
-    background-color: #465775;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 0 3px #465775;
-}
-
-#weekly-expenses {
-    font-size: 200%;
-} */
-
 /* Entry Form */
-.entry-form {
-    width: auto;
-    background-color: #445552;
-    border-radius: 10px;
-    height: 50px;
+#entry-form {
+    background-color: #ffecd1;
+    border-radius: 20px;
     padding: 20px;
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    /* flex: 1 1 0px; */
-    /* flex-grow: 1; */
-    align-content: space-evenly;
-    justify-content: space-around;
-}
-
-.categories-option {
-    color: black;
-}
-
-.entry-form input:focus {
-    outline: none;
-}
-
-
-#submit {
-    margin: 10px;
 }
 
 /* Entry Area*/
-.entry-area {
-    width: auto;
-    background-color: #FFD166;
+#entry-area {
+    max-height: 600px;
+    background-color: #e0e3dd;
     border-radius: 10px;
-    height: 500px;
     padding: 20px;
-    margin: 10px;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-
     overflow-y: auto;
-}
-
-tr,
-table,
-thead,
-tbody {
-    width: 100%;
-    font-size: 1.1em;
-}
-
-thead {
-    text-align: left;
-}
-
-.entry-header-row {
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    /* font-size: medium; */
 }
 
 /* Reset button */
 #reset {
     background-color: #cc3f0c;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: auto;
-    font-size: medium;
-    margin-left: 10px;
-    margin-right: 10px;
-    /* font-size: 16px; */
 }
+
+
+.modal-dialog {
+    overflow-y: initial;
+ }
+
+.modal-content {
+    height: 95vh;
+    overflow-y: auto;
+ }

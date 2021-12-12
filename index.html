@@ -20,23 +20,30 @@
 </head>
 
 <body>
-    <!-- <div class="row"> -->
+   
     <div class="container-md">
         <div class="row justify-content-center align-items-center">
             <img src="assets/images/logo.jpg" alt="Wallet" style="border-radius: 100px; width: 70px; height: auto;">
             <h1>Budgy</h1>
         </div>
         <h2 class="text-center">Your Finance Buddy</h2>
+
+        <button type="button" class="btn btn-primary" id="instruction-button">
+            Instruction
+        </button>
     </div>
 
+    <br>
 
-    <!-- </div> -->
     <div class="container-md" id="dashboard">
+
         <div class="container-md">
 
             <div class="row">
-                <div class="col">Balance:
-                    <output id="balance">0</output>
+                <div class="col">
+                    <h2>Balance:</h2>
+                    
+                    <h3 id="balance">0</h3>
                 </div>
 
                 <div class="col">
@@ -56,8 +63,8 @@
 
             <div class="row">
                 <div class="col monthly">
-                    <h2>Monthly balance</h2>
-                    <output id="monthly-expenses">0</output>
+                    <h4>Monthly balance</h4>
+                    <h5 id="monthly-expenses">0</h5>
                     <label for="monthly-limit"></label>
                     <input class="form-control my-1 mr-sm-2" type="number" min="0" oninput="this.value = 
                     !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" id="monthly-limit"
@@ -65,8 +72,8 @@
                 </div>
 
                 <div class="col weekly">
-                    <h2>Weekly balance</h2>
-                    <output id="weekly-expenses">0</output>
+                    <h4>Weekly balance</h4>
+                    <h5 id="weekly-expenses">0</h5>
                     <label for="weekly-limit"></label>
                     <input class="form-control my-1 mr-sm-2" type="number" min="0" oninput="this.value = 
                     !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" id="weekly-limit"
@@ -74,12 +81,11 @@
                 </div>
             </div>
         </div>
+    </div>.
 
+    <br>
 
-
-    </div>
-
-    <div class="container-md">
+    <div class="container-md" id="entry-form">
         <form id="form-input" class="form-row">
             <div class="col-md-3 mb-3">
                 <label class="sr-only" for="description">Name</label>
@@ -136,10 +142,12 @@
 
     </div>
 
-    <div class="container-md">
+    <br>
+
+    <div class="container-md mh-50 h-50" id="entry-area">
 
         <!-- <div id="entry-filters"></div> -->
-        <div id="entry-table">
+        <div id="entry-table" class="table-responsive">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -211,58 +219,106 @@
                         <td>2021-12-01</td>
                         <td class="income">37560</td>
                     </tr>
+                    <tr class="entry-row">
+                        <td>Lunch</td>
+                        <td>Food &amp; drinks</td>
+                        <td>2021-12-03</td>
+                        <td>200</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Starbucks</td>
+                        <td>Food &amp; drinks</td>
+                        <td>2021-12-03</td>
+                        <td>100</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Zara</td>
+                        <td>Beauty &amp; Health</td>
+                        <td>2021-12-03</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Salary</td>
+                        <td>Income</td>
+                        <td>2021-12-01</td>
+                        <td class="income">37560</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Lunch</td>
+                        <td>Food &amp; drinks</td>
+                        <td>2021-12-03</td>
+                        <td>200</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Starbucks</td>
+                        <td>Food &amp; drinks</td>
+                        <td>2021-12-03</td>
+                        <td>100</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Zara</td>
+                        <td>Beauty &amp; Health</td>
+                        <td>2021-12-03</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr class="entry-row">
+                        <td>Salary</td>
+                        <td>Income</td>
+                        <td>2021-12-01</td>
+                        <td class="income">37560</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <br>
+
+    <div class="container-md">
+        <button class="btn btn-danger" id="reset" type="button" name="reset">Reset</button>
+    </div>
+
+        
 
 
-        <!-- <div class="container-md"> -->
-        <button type="button" class="btn btn-primary" id="instruction-button">
-            Instruction
-        </button>
-        <div class="modal fade" id="instructionModal" tabindex="-1" aria-labelledby="instructionModalLabel"
-            aria-modal="true" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="instructionModalLabel">How it works</h3>
-                        <button type="button" class="close" aria-label="Close" id="x-button">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h5>Log your entries</h5>
-                        <p>You can introduce your income and expenses using an entry form with four fields.</p>
-                        <p><i>Income</i> defines money received, especially regularly. Income entries are
-                            represented with green color in the entries table. </p>
-                        <p>An <i>expense</i> is an amount of money needed or used to do or buy something.</p>
-                        <p>Your entries will appear as a list, with the most recent input on top. </p>
-                        <p><b>Description</b> is a short report of your income/expenses.</p>
-                        <p><b>Category</b> <mark>Income</mark> is required to be your first category, money
-                            received. All other categories represent expenses.</p>
-                        <p><b>Date</b> past and current date.</p>
-                        <p><b>Amount</b> whole and two decimal places numbers, using comma character.</p>
-                        <h5>Dashboard</h5>
-                        <p><b>Balance</b> displays current balance, a sum of incomes, and subtraction of expenses.</p>
-                        <p><b>Currency</b> allows you to select your preferred currency type. You can choose just one option, another option can be made after pressing <i>reset</i>.</p>
-                        <p><b>Weekly balance</b> shows expenses you made in a week's time (Monday-Sunday).</p>
-                        <p><b>Monthly balance</b> shows your monthly payments.</p>
-                        <p><b>Set limit</b> are your chosen limits for weekly, respectively, monthly expenses. When these limits are
-                            exceeded, weekly and monthly balance will be updated with red color. </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" id="close-button">Close</button>
-                    </div>
+
+    <div class="modal fade" id="instructionModal" tabindex="-1" aria-labelledby="instructionModalLabel"
+        aria-modal="true" role="dialog">
+        <div class="modal-dialog" role="document" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="instructionModalLabel">How it works</h3>
+                    <button type="button" class="close" aria-label="Close" id="x-button">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Log your entries</h5>
+                    <p>You can introduce your income and expenses using an entry form with four fields.</p>
+                    <p><i>Income</i> defines money received, especially regularly. Income entries are
+                        represented with green color in the entries table. </p>
+                    <p>An <i>expense</i> is an amount of money needed or used to do or buy something.</p>
+                    <p>Your entries will appear as a list, with the most recent input on top. </p>
+                    <p><b>Description</b> is a short report of your income/expenses.</p>
+                    <p><b>Category</b> <mark>Income</mark> is required to be your first category, money
+                        received. All other categories represent expenses.</p>
+                    <p><b>Date</b> past and current date.</p>
+                    <p><b>Amount</b> whole and two decimal places numbers, using comma character.</p>
+                    <h5>Dashboard</h5>
+                    <p><b>Balance</b> displays current balance, a sum of incomes, and subtraction of expenses.</p>
+                    <p><b>Currency</b> allows you to select your preferred currency type. You can choose just one option, another option can be made after pressing <i>reset</i>.</p>
+                    <p><b>Weekly balance</b> shows expenses you made in a week's time (Monday-Sunday).</p>
+                    <p><b>Monthly balance</b> shows your monthly payments.</p>
+                    <p><b>Set limit</b> are your chosen limits for weekly, respectively, monthly expenses. When these limits are
+                        exceeded, weekly and monthly balance will be updated with red color. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close-button">Close</button>
                 </div>
             </div>
         </div>
-        <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
-        <!-- </div> -->
-
-        <button class="btn btn-danger" id="reset" type="button" name="reset">Reset</button>
-
-
     </div>
+    <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
 
     <!-- JavaScript file -->
     <script type="module" src="assets/js/script.js"></script>
