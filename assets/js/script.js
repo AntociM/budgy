@@ -1,5 +1,7 @@
 import DateTime from './luxon/src/datetime.js'
 
+var currencyValueGlobal = document.getElementById("currency").value;
+
 //This function will bring tge entry form to the initial form.
 function resetEntryForm() {
     document.getElementById("form-input").reset();
@@ -41,14 +43,14 @@ function handleSubmit(event) {
         <td>${desc}</td>
         <td>${cat}</td>
         <td>${day}</td>
-        <td class="income">${oneAmount}</td>
+        <td class="income">${oneAmount} </td>
     `;
     } else {
         table_row.innerHTML = `
         <td>${desc}</td>
         <td>${cat}</td>
         <td>${day}</td>
-        <td>${oneAmount}</td>
+        <td>${oneAmount} ${currencyValueGlobal}</td>
     `;
     }
 
@@ -181,7 +183,7 @@ function handleDateValidation(event) {
     }
 }
 
-
+//
 function handleAmountValidation(event) {
     if (event.target.value !== "") {
         if (/^0[0-9].*$/.test(event.target.value)) {
@@ -197,6 +199,26 @@ function handleAmountValidation(event) {
     }
 }
 
+/**
+ * This function validates the currency input, prompting an error message when
+ * user selects different currency types. 
+ * @param {*} event 
+ */
+function handleCurrencyInput (event) {
+    if(event.target.value != currencyValueGlobal && document.getElementsByTagName("tbody")[0].children.length != 0) {
+        alert("You cannot change currency.");
+
+        for(var option, i = 0; option = event.target.options[i]; i++) {
+            if(option.value == currencyValueGlobal) {
+                event.target.selectedIndex = i;
+                break;
+            }
+        }
+    }
+
+    updateDashboard();
+}
+
 // Add event listners for HTML elements
 document.getElementById('form-input').addEventListener('submit', handleSubmit);
 document.getElementById("weekly-limit").addEventListener("change", handleWeeklyLimit);
@@ -209,6 +231,7 @@ document.getElementById("description").addEventListener("change", handleDescript
 document.getElementById("category").addEventListener("click", handleCategoryValidation);
 document.getElementById("date").addEventListener("change", handleDateValidation);
 document.getElementById("amount").addEventListener("keyup", handleAmountValidation);
+document.getElementById("currency").addEventListener("change", handleCurrencyInput);
 
 /**
  * Iterates through the rows and calculates the current balance.
@@ -228,7 +251,7 @@ function updateBalance() {
     }
 
     var currentBalance = document.getElementById("balance");
-    currentBalance.textContent = balance.toFixed(2);
+    currentBalance.textContent = balance.toFixed(2) + " " + document.getElementById("currency").value;
 }
 
 /**
@@ -250,7 +273,7 @@ function updateMonthlyBalance() {
     }
 
     var currentMonthlyBalance = document.getElementById("monthly-expenses");
-    currentMonthlyBalance.textContent = monthlyAmount.toString();
+    currentMonthlyBalance.textContent = monthlyAmount.toString() + " " + document.getElementById("currency").value;
 }
 
 /**
@@ -283,7 +306,7 @@ function currentWeeklyBalance() {
     }
 
     var currentWeeklyBalance = document.getElementById("weekly-expenses");
-    currentWeeklyBalance.textContent = weeklyAmount.toString();
+    currentWeeklyBalance.textContent = weeklyAmount.toString() + " " + document.getElementById("currency").value;
 }
 
 window.addEventListener("load", updateDashboard);
@@ -314,7 +337,7 @@ window.onclick = function(event) {
 
 document.getElementById("instruction-button").addEventListener("click", openModal);
 document.getElementById("instruction-button").addEventListener("click", openModal);
+document.getElementById("close-button").addEventListener("click", closeModal);
+document.getElementById("close-button").addEventListener("click", closeModal);
 
-document.getElementById("close-button").addEventListener("click", closeModal);
-document.getElementById("close-button").addEventListener("click", closeModal);
 
