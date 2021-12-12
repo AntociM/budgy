@@ -1,6 +1,6 @@
 # Budgy
 
-Budgy is an interactive front-end website for tracking users' financial data. By default, it loads some test data to demonstrate the website's capabilities. This website is intended to be connected to a database that stores multiple users' information.
+Budgy is an interactive front-end website for tracking user's financial data. By default, it loads some test data to demonstrate the website's capabilities. This website is intended to be connected to a database that handles multiple users.
 ![](assets/images/responsive.jpg)
 
 # Table of content 
@@ -27,7 +27,7 @@ The Wireframe for Budgy was produced using WireFlow. The wireframe's display is 
 ![](assets/images/wireframe.jpg)
 
 The design is split into three significant parts.
-* **dashboard** - this is where the user can see the current balance, monthly and weekly expenses, and set his spending limits on a weekly and monthly basis.
+* **dashboard** - this is where the user can see the current balance, currency, monthly and weekly expenses, and set its spending limits on a weekly and monthly basis.
 * **entry-form** - this is where the user registers the entries. 
 * **entry-area** - this sections displays all the entries. 
 
@@ -35,7 +35,7 @@ The design is split into three significant parts.
 Typography: The font chosen is Roboto, sans-serif.
 
 ## Color palette
-The chosen color scheme is based on blue, green and lighter tones of beige and gray. This palette points the content out and creates a modern aspect for the website. Moreover, blue is traditionally associated with corporate uniformity and professionalism in the business industry.
+The chosen color scheme is based on blue, green and lighter tones of beige and gray. This palette allows the user to focus on the content and creates a modern aspect for the website. Moreover, blue is traditionally associated with corporate uniformity and professionalism in the business industry.
 ![](assets/images/color-pallet.jpg)
 
 # User Experience
@@ -53,24 +53,35 @@ When pressed, a modal window will pop up. The modal contains valuable informatio
 The modal can be closed using `x-button` or `close-button` from the window. Outside click will also close the information window.
 
 ### Dashboard
-It is designed to prompt the user with information about balance, weekly and monthly expenses. **Balance** is defined as the sum of all incomes and sutraction of expensen. **Weekly balance** represents the expenses made in the current week, with Monday's first day of the week. **Monthly balance** represents the sum of all expenses in the current month. 
+It is designed to prompt the user with information about balance, weekly and monthly expenses. 
+
+**Balance** is defined as the sum of all income entries minus all expense entries. Balance's value will update with every new entry.
+
+**Weekly balance** represents the expenses made in the current week, with Monday being the first day of the week.
+
+ **Monthly balance** represents the sum of all costs in the current month. 
+
+ **Currency** is a drop-down list with multiple currency types to choose from. User can select one currency that will be dysplayed next to Balance, Monthly and Weekly balance. A new currency can be selected when user press `reset`. 
 ![](assets/images/dashboard-sample.jpg)
 
-The user can set his spending limit on a weekly and monthly basis. When the limit is exceeded, the value associated with it will be displayed in red. Here is an example where the **monthly** limit was exceeded, and the same is true for **weekly** limit as well. 
+The user can set its spending limit on a weekly and monthly basis. When the limit is exceeded, the value associated with it will be displayed in red. Here is an example where the **monthly**  and **weekly** limits were exceded.
 ![](assets/images/dashboard-sample-limit-exceeded.jpg)
-The user is allowed to increase the limit. If it is increased above the reported expenses, the red style will dynamically disappear.
+When the limit is reached, the user is allowed to increase it. If it is increased above the reported expenses, the red style will dynamically disappear.
 
+### Entry Form
 This element is designed to allow the user to register entries. It is composed of 5 elements:
 * **description** - entry description. The user is expected to briefly describe the type of income or expense, transaction place, or other information. This entry field validates the user's input by ensuring that at least one alphanumeric character is inserted. In case of invalid input, an error message appears to notify the user about the expected input.
-* **category** - user can choose from `income, groceries, restaurant, beauty, health, leisure, gifts, transport, hobbies, shopping, bills, loans, housing`. The user's first entry is valid when `Income` is selected. `Income` is defined as the money received, on a regular basis. All the other categories are expenses. To ensure a positive current balance, `Income` comes first. A category is needed for later entry filtering.
-* **date** - the date when the entry was processed. Used for later filtering.
-* **amount** - entry's amount.
-* **button** - the submit button, marked with "+", triggers the form submission.
-When the user press submit button, and the entry is processed, the form will be cleared to make room for a new request. 
+* **category** - user can choose from `income, groceries, restaurant, beauty, health, leisure, gifts, transport, hobbies, shopping, bills, loans, housing`. 
+
+The user's first entry is valid when `Income` is selected. `Income` is defined as the money received. All the other categories are expenses. To ensure a positive current balance, `Income` comes first. A category is needed for later entry filtering.
+* **date** - the date when the entry was processed. This entry field do not allow inputs for future dates.
+* **amount** - entry's amount. The user can add whole numbers or numbers with two decimal places, using comma character. 
+* **add button** - when clicked it triggers the form submission.
+When the user press `add` button, the entry will be processed, the form will be cleared to make room for a new request. 
 ![](assets/images/entry-form.jpg)
 
 ### Entry Area
-This element displays all the entries submitted via the form. At this point, it is only for display. The intention is also to provide manipulation over the entries, like filtering capabilities, sorting. 
+This element displays all the entries submitted via the entry form. At this point, it is only for display. The intention is also to provide manipulation over the entries, like filtering capabilities, sorting. 
 
 The entries from **income** category will always be displayed in green to make them more easily noticeable by the user. 
 ![](assets/images/entry-area.jpg)
@@ -84,27 +95,34 @@ The website also has a reset button. When this button is pressed, it will clear 
 
 - HTML5 - provides the core structure for the website.
 - CSS - styling.
-- Bootstrap.
-- Luxor library
+- Bootstrap - styling.
+- Luxor JS library - for date manipulation.
 - JavaScript - used to program the behavior of web page.
 - Gitpod - used to deploy the website.
 - Github - used to host and edit the website.
 
 # Testing
+The testing was performed in different ways, with emphasis on manual testing. Interactions and reviews with my mentor has brought to light some issues, which were solved. 
 
+## Tools
 The HTML and CSS code were tested using [W3C HTML Validator](https://validator.w3.org/), respectively [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). JavaScript code was tested using [JSHint](https://jshint.com/).
 A few bugs have been found during the development process, which were corrected.
 
-## HTML result
+### HTML result
 ![](assets/images/html-verification.jpg)
 
-## CSS result
+### CSS result
 ![](assets/images/css-validation.jpg)
 
-
-## JavaScript result
+### JavaScript result
 ![](assets/images/js-verification.jpg)
 
+### Lighthouse
+This [tool](#https://developers.google.com/web/tools/lighthouse) was used to test the performance and accessibility. It provided useful information to improve accessibility and SEO during the creation process. Here are the final results:
+![](assets/images/lighthouse.jpg)
+
+### Manual testing
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Responsiveness
 The responsiveness was tested using three different tools:
@@ -114,10 +132,6 @@ The responsiveness was tested using three different tools:
 
 ## Compatibility
 The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and appearance remains unchanged between these three on any device size. 
-
-## Lighthouse
-This [tool](#https://developers.google.com/web/tools/lighthouse) was used to test the performance and accessibility. It provided useful information to improve accessibility and SEO during the creation process. Here are the final results:
-![](assets/images/lighthouse.jpg)
 
 ## Fixed Bugs
 
@@ -134,11 +148,6 @@ I used 'min' attribute to prevent negative values for `input type="number"` when
 The current balance was displayed with multiple decimals. This was solved with JavaScript `toFixed()`.
 
 During testing, a functional error emerged when calculating current week expenses. The week number of the year was inaccurate, and expenses were registered from Wednesday until next Tuesday. This bug was fixed in currentWeeklyBalance function by using `DataTime` data structure from Luxon library. Properties `weekNumber` and `weekYear` were used to ensure the correct validation of user input in the week of the corresponding year.
-
-
-
-
-
 
 ## Known issues
 1. Description data input is validated and prompted as invalid while the user is typing, but data is not validated on the `submit` button. The user's input will be reported in the list.
