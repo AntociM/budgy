@@ -27,7 +27,7 @@ The Wireframe for Budgy was produced using WireFlow. The wireframe's display is 
 ![](assets/images/wireframe.jpg)
 
 The design is split into three significant parts.
-* **dashboard** - this is where the user can see the current balance, monthly and weekly expenses.
+* **dashboard** - this is where the user can see the current balance, monthly and weekly expenses, and set his spending limits on a weekly and monthly basis.
 * **entry-form** - this is where the user registers the entries. 
 * **entry-area** - this sections displays all the entries. 
 
@@ -35,25 +35,34 @@ The design is split into three significant parts.
 Typography: The font chosen is Roboto, sans-serif.
 
 ## Color palette
-The chosen color scheme is based on yellow and dark tones of gray. This palette points the content out and creates a modern aspect for the website. Moreover, gray is traditionally associated with corporate uniformity and professionalism in the business industry.
+The chosen color scheme is based on blue, green and lighter tones of beige and gray. This palette points the content out and creates a modern aspect for the website. Moreover, blue is traditionally associated with corporate uniformity and professionalism in the business industry.
 ![](assets/images/color-pallet.jpg)
 
 # User Experience
 ## Features
 Each section has different features designed to make the user experience more enjoyable. 
 
+### Instruction button
+When pressed, a modal window will pop up. The modal contains valuable information about the website's elements and expected interaction. 
+
+![](assets/images/instruction-button.jpg)
+
+
+![](assets/images/modal.jpg)
+
+The modal can be closed using `x-button` or `close-button` from the window. Outside click will also close the information window.
+
 ### Dashboard
-It is designed to prompt the user with information about balance, weekly and monthly expenses. **Balance** is defined as the sum of all expenses and incomes. **Weekly** represents the value made in the current week, with Monday's first day of the week. **Monthly** represents the sum of all expenses in the current month. 
+It is designed to prompt the user with information about balance, weekly and monthly expenses. **Balance** is defined as the sum of all incomes and sutraction of expensen. **Weekly balance** represents the expenses made in the current week, with Monday's first day of the week. **Monthly balance** represents the sum of all expenses in the current month. 
 ![](assets/images/dashboard-sample.jpg)
 
-User can set their spending limits on a weekly and monthly basis. When the limit is exceeded, the value associated with it will be displayed in red. Here is an example where the **monthly** limit was exceeded, and the same is true for **weekly** limit as well. 
+The user can set his spending limit on a weekly and monthly basis. When the limit is exceeded, the value associated with it will be displayed in red. Here is an example where the **monthly** limit was exceeded, and the same is true for **weekly** limit as well. 
 ![](assets/images/dashboard-sample-limit-exceeded.jpg)
 The user is allowed to increase the limit. If it is increased above the reported expenses, the red style will dynamically disappear.
 
-### Entry Form
 This element is designed to allow the user to register entries. It is composed of 5 elements:
-* **description** - entry description. Ex, where is the money coming from or where the money was spent.
-* **category** - user can choose from `groceries, food&drinks, Beauty&health, leisure, gifts, income`. A category is needed for later entry filtering.
+* **description** - entry description. The user is expected to briefly describe the type of income or expense, transaction place, or other information. This entry field validates the user's input by ensuring that at least one alphanumeric character is inserted. In case of invalid input, an error message appears to notify the user about the expected input.
+* **category** - user can choose from `income, groceries, restaurant, beauty, health, leisure, gifts, transport, hobbies, shopping, bills, loans, housing`. The user's first entry is valid when `Income` is selected. `Income` is defined as the money received, on a regular basis. All the other categories are expenses. To ensure a positive current balance, `Income` comes first. A category is needed for later entry filtering.
 * **date** - the date when the entry was processed. Used for later filtering.
 * **amount** - entry's amount.
 * **button** - the submit button, marked with "+", triggers the form submission.
@@ -75,6 +84,8 @@ The website also has a reset button. When this button is pressed, it will clear 
 
 - HTML5 - provides the core structure for the website.
 - CSS - styling.
+- Bootstrap.
+- Luxor library
 - JavaScript - used to program the behavior of web page.
 - Gitpod - used to deploy the website.
 - Github - used to host and edit the website.
@@ -131,7 +142,6 @@ During testing, a functional error emerged when calculating current week expense
 
 ## Known issues
 1. Description data input is validated and prompted as invalid while the user is typing, but data is not validated on the `submit` button. The user's input will be reported in the list.
-2. The Lighthouse report highlights missing label for the input data in the form. It was a design choice not to set a label text.
 
 # Deployment
 
