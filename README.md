@@ -64,14 +64,13 @@ The user's first entry is valid when `Income` is selected. `Income` is defined a
 * **amount** - entry's amount. The user can add whole numbers or numbers with two decimal places using a comma character. 
 * **add button** - when clicked, it triggers the form submission.
 When the user presses the `add` button, the entry will be processed, and the form will be cleared to make room for a new request.
-
+ 
 ![](assets/images/entry-form.jpg)
 
 ### Entry Area
 This element displays all the entries submitted via the entry form. At this point, it is only for display. The intention is also to provide manipulation over the entries, like filtering capabilities, sorting. 
 
 The entries from **income** category will always be displayed in green to make them more easily noticeable by the user. 
-
 ![](assets/images/entry-area.jpg)
 
 ### Reset
@@ -133,7 +132,7 @@ The website was tested on Chrome, Edge, Mozilla Firefox. The functionality and a
 
 During the development process, a series of errors popped up. 
 
-- The user's ability to add negative values in the Amount form field showed a defensive design. I solved this bug by using `min` and `oninput` attributes for `input`. 
+- The user's ability to add negative values in the Amount form field showed a lack of defensive design. I solved this bug by using `min` and `oninput` attributes for `input`. 
 
 - Another error in the same form field was that the user could add only whole numbers. This was solved by setting the `step` input attribute's value to 0.01. Numeric values with two decimals are allowed. 
 

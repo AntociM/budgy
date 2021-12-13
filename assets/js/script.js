@@ -148,7 +148,6 @@ function handleDescriptionValidation(event) {
  * User's choice from the category's drop-down list will be validated 
  * as follow: when entries history is clean, the first category input have
  * to be "Income" after every choice is a valid one.
- * This will prevent a negative balance value. 
  */
 function handleCategoryValidation(event) {
     if (event.target.value !== "") {
@@ -162,12 +161,7 @@ function handleCategoryValidation(event) {
     }
 }
 
-
-/**
- * 
- * @param {*} event 
- */
-
+//The user cannot select a future date.
 function handleDateValidation(event) {
     if (event.target.value !== "") {
         var today = new Date();
