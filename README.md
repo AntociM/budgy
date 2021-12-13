@@ -66,6 +66,7 @@ It is designed to prompt the user with information about balance, currency, week
 
 The user can set its spending limit on a weekly and monthly basis. When the limit is exceeded, the value associated with it will be displayed in red. Here is an example where the **monthly**  and **weekly** limits were exceeded.
 ![](assets/images/dashboard-sample-limit-exceeded.jpg)
+
 When the limit is reached, the user is allowed to increase it. If it is increased above the reported expenses, the red style will dynamically disappear.
 
 ### Entry Form
@@ -126,6 +127,10 @@ The testing targeted all the number and text input elements.
 * `description` was tested by inserting alphanumeric characters, only whitespaces, and non-alphanumeric characters, with the last two being correctly marked as invalid.
 * `amount` was tested by inserting multiple combinations of valid and invalid numbers. The following values were inserted: `0, 0.00, 007, 100, 100.01, -100, -100.01`
 * `monthly and weekly limits` were tested by inserting negative values, alphabetic characters, special characters, and white spaces.
+![](assets/images/entry-area-testing.jpg)
+
+![](assets/images/entry-area-validation.jpg)
+
 
 ## Responsiveness
 The responsiveness was tested using three different tools:
@@ -193,12 +198,13 @@ The site was deployed to GitHub pages. The steps to deploy a site are:
 - Google Fonts 
 - W3 Schools
 - [This solution](https://stackoverflow.com/questions/32777184/html-input-for-positive-whole-numbers-only-type-number/32784911?noredirect=1#comment61101594_32784911) was implemented to the Amount field to accept only positive, whole numbers values.
+- [This](https://stackoverflow.com/questions/7372067/is-there-any-way-to-prevent-input-type-number-getting-negative-values) was used to prevent negative values for weekly and monthly limits.
 - CSS Tricks
 - MDN WEB DOCS 
 - coolors.co - used to create a color pallet
 - Wire Flow Wireframe Design - was used to create the wireframe
 - DelftStack (https://www.delftstack.com/howto/javascript/javascript-get-week-number/) - this was used as inspiration to get the current week of the year.
 # Acknowledgements
- The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute.
+ The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer (e-Commerce) Diploma at the Code Institute. Special thanks to my mentor, Precious Ijege, for the support and feedback.
 
 The live link to the Github repository can be found here: https://antocim.github.io/budgy/.
