@@ -1,24 +1,9 @@
 # Budgy
 
-Budgy is an interactive front-end website for tracking users' financial data. It loads some test data to demonstrate the website's capabilities by default. This website will be connected to a database that handles multiple users.
+Budgy is an interactive front-end website for tracking users' financial data. Users' can keep track of their income and spending by manually add transactions. An updated current balance will be displayed, as well as a weekly balance and a monthly one. 
+It loads some test data to demonstrate the website's capabilities by default. This website will be connected to a database that handles multiple users.
+
 ![](assets/images/responsive.jpg)
-
-# Table of content 
-- [Design Decisions](#design-decisions)
-    - [Wireframe](#wireframe)
-    - [Design choices](#design-choices)
-    - [Color palette](#color-palette)
-- [User Experience](#user-experience)
-    - [Features](#features)
-- [Technologies used](#technologies-used)
-- [Testing](#testing)
-- [Deployment](#deployment)
-    - [Project deployment](#project-deployment)
-    - [To fork the repository on GitHub](#to-fork-the-repository-on-github)
-    - [To create a local clone of this project](#to-create-a-local-clone-of-this-project)
-- [Credits](#credits)
-- [Acknowledgements](#acknowledgements)
-
 
 # Design Decisions
 ## Wireframe
@@ -70,7 +55,7 @@ The user can set its spending limit on a weekly and monthly basis. When the limi
 When the limit is reached, the user is allowed to increase it. If it is increased above the reported expenses, the red style will dynamically disappear.
 
 ### Entry Form
-This element is designed to allow the user to register entries. It is composed of 5 elements:
+This structure is designed to allow the user to register entries. It is composed of 5 elements:
 * **description** - entry description. The user is expected to briefly describe the type of income or expense, transaction place, or other information. This entry field validates the user's input by ensuring that at least one alphanumeric character is inserted. In case of invalid input, an error message appears to notify the user about the expected input.
 * **category** - user can choose from `income, groceries, restaurant, beauty, health, leisure, gifts, transport, hobbies, shopping, bills, loans, housing`. 
 
@@ -78,13 +63,15 @@ The user's first entry is valid when `Income` is selected. `Income` is defined a
 * **date** - the date when the entry was processed. This entry field does not allow inputs for future dates.
 * **amount** - entry's amount. The user can add whole numbers or numbers with two decimal places using a comma character. 
 * **add button** - when clicked, it triggers the form submission.
-When the user presses the `add` button, the entry will be processed, and the form will be cleared to make room for a new request. 
+When the user presses the `add` button, the entry will be processed, and the form will be cleared to make room for a new request.
+
 ![](assets/images/entry-form.jpg)
 
 ### Entry Area
 This element displays all the entries submitted via the entry form. At this point, it is only for display. The intention is also to provide manipulation over the entries, like filtering capabilities, sorting. 
 
 The entries from **income** category will always be displayed in green to make them more easily noticeable by the user. 
+
 ![](assets/images/entry-area.jpg)
 
 ### Reset
@@ -127,6 +114,7 @@ The testing targeted all the number and text input elements.
 * `description` was tested by inserting alphanumeric characters, only whitespaces, and non-alphanumeric characters, with the last two being correctly marked as invalid.
 * `amount` was tested by inserting multiple combinations of valid and invalid numbers. The following values were inserted: `0, 0.00, 007, 100, 100.01, -100, -100.01`
 * `monthly and weekly limits` were tested by inserting negative values, alphabetic characters, special characters, and white spaces.
+
 ![](assets/images/entry-area-testing.jpg)
 
 ![](assets/images/entry-area-validation.jpg)
